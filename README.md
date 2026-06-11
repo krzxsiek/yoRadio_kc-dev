@@ -1,3 +1,45 @@
+# yoRadio V-Tom (Modded by kc-dev)
+Dodałem obsługę następujących wyświetlaczy // I've added support for the following displays:
+- NV3007 428x142 2.79" https://pl.aliexpress.com/item/1005012251243789.html
+- ST7789 284x76 2.25" https://aliexpress.com/item/1005009016973081.html
+
+### NV3007 428x142 2.79"
+<a href="https://youtu.be/3gqVbwaUH2E?si=ETXbSLO5y7pVvZy1">
+    <img src="https://img.youtube.com/vi/3gqVbwaUH2E/maxresdefault.jpg" width="400" alt="NV3007 428x142 2.79&quot; (Układ 1)">
+</a>
+<a href="https://youtu.be/OIB90S6o9-4?si=mor6tHdsKJRHwaaY">
+    <img src="https://img.youtube.com/vi/OIB90S6o9-4/maxresdefault.jpg" width="400" alt="NV3007 428x142 2.79&quot; (Układ 2)">
+</a>
+
+### ST7789 284x76 2.25"
+<a href="https://youtu.be/pyjyYVzSvXk?si=yCLboO9ejS3hEOCV">
+    <img src="https://img.youtube.com/vi/pyjyYVzSvXk/maxresdefault.jpg" width="400" alt="ST7789 284x76 2.25&quot; ">
+</a>
+
+#### [PL]
+Dla wyświetlacza NV3007 2.79' 428x142 są przygotowane dwa pliki konfiguracyjne (dwa layouty), <br />
+można podmienić plik `\src\displays\conf\displayNV3007_142conf.h` **(Układ 1)** <br />
+z plikiem `\src\displays\conf\displayNV3007_142conf.h.kopia` **(Układ 2)** wedle uznania ;)
+
+Obsługa wyświetlacza NV3007 została dodana w bibliotece "Adafruit ST7735 and ST7789 Library WITHOUT SD" na podstawie plików z biblioteki "Arduino GFX"
+
+Oprócz bibliotek i konfiguracji wyświetlacza, zostało dodanych kilka usprawnień w innych plikach potrzebnych do lepszego wyświetlania niektórych elementów na wyswietlaczu, między innymi adresu IP na ekranie głośności (aby nie zaśmiecał ekranu głównego na którym i tak mamy ograniczoną ilośc miejsca).
+Dodałem też swoją małą modyfikacje umożliwiającą ustawienie na stałe nazwy stacji poprzez dodanie przecinka przed nqazwą stacji ", NAZWA STACJI". 
+
+#### [EN]
+For the NV3007 2.79' 428x142 display, there are two configuration files (two layouts). <br />
+You can replace the `\src\displays\conf\displayNV3007_142conf.h` file **(Layout 1)** with the <br />`\src\displays\conf\displayNV3007_142conf.h.kopia` file **(Layout 2)** as needed.
+
+Support for the NV3007 display has been added in the "Adafruit ST7735 and ST7789 Library WITHOUT SD" library, based on files from the "Arduino GFX" library.
+
+In addition to the display libraries and configuration files, several improvements have been added to other files needed to better display certain elements on the display, including the IP address on the volume screen (so it doesn't clutter the main screen, which already has limited space).
+
+I also added my own small modification, allowing you to permanently set the station name by adding a comma before the station name, ",STATION NAME."
+
+~ Krzysztof Cielma (kc-dev) (09.06.26) 
+
+==========================================================================
+
 # yoRadio V-Tom
 <img src="images/front_radio.png" alt="Projekt logó" width="800">
 
