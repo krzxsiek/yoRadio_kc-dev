@@ -49,6 +49,7 @@ STORE YOUR SETTINGS IN THE *** myoptions.h *** FILE.
 #define DSP_2002        26    // 20x2           https://aliexpress.com/item/32812259852.html
 #define DSP_2002I2C     27    // 20x2           https://aliexpress.com/item/32812259852.html
 #define DSP_ST7789_170  28    // 320x170  1.9'  https://aliexpress.com/item/1005008723378017.html
+#define DSP_NV3007_142  29    // 428x142  2.79' https://pl.aliexpress.com/item/1005012251243789.html
 
 #ifndef DSP_MODEL
   #define DSP_MODEL  DSP_DUMMY

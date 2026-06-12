@@ -10,6 +10,22 @@
     This allows you to set the appropriate configuration for your hardware.
 */
 
+/* 
+    Paczka przygotowana pod obsługę wyświetlacza na sterowniku NV3007 2.79' 428x142 
+    oraz wyświetlacza ST7789 2.25' 284x76
+
+    Dla wyświetlacza NV3007 2.79' 428x142 są przygotowane dwa pliki konfiguracyjne (dwa layouty),
+    można podmienić plik \src\displays\conf\displayNV3007_142conf.h (Układ 1) z plikiem \src\displays\conf\displayNV3007_142conf.h.kopia (Układ 2) wedle uznania ;)
+
+    Obsługa wyświetlacza NV3007 została dodana w bibliotece "Adafruit ST7735 and ST7789 Library WITHOUT SD" na podstawie plików z biblioteki "Arduino GFX"
+
+    Oprócz bibliotek i konfiguracji wyświetlacza, zostało dodanych kilka usprawnień w innych plikach potrzebnych do lepszego wyświetlania 
+    niektórych elementów na wyswietlaczu, między innymi adresu IP na ekranie głośności (aby nie zaśmiecał ekranu głównego na którym i tak mamy ograniczoną ilośc miejsca).
+    Dodałem też swoją małą modyfikacje umożliwiającą ustawienie na stałe nazwy stacji poprzez dodanie przecinka przed nqazwą stacji ", NAZWA STACJI". 
+
+     ~ Krzysztof Cielma (kc-dev) (09.06.26) 
+*/
+
 #ifndef myoptions_h
 #define myoptions_h
 
@@ -19,42 +35,46 @@
 
 // #define HEAP_DBG
 
-/* Itt tudod beállítani a program nyelvét
-   You can set the program language here.
+
+/* You can set the program language here. - Tutaj możesz ustawić język programu.
    Supported languages: HU NL PL RU EN GR SK DE UA ES. */
-#define L10N_LANGUAGE HU
+#define L10N_LANGUAGE EN
 
-/* -- Névnapok megjelenítése -- Display name days --
+/* Display name days - Pokaż imieniny
 Supported languages: HU, PL, NL, GR, DE (UA Local/namedays/namedays_UA.h is not filled in.) */
-#define NAMEDAYS_FILE HU
+#define NAMEDAYS_FILE EN
 
-#define USE_BUILTIN_LED false /* The RGB LED does not turn on.. */
+#define USE_BUILTIN_LED false /* The RGB LED does not turn on.. - Dioda LED RGB nie włączy się. */
 
-/* Arduino OTA Support */
- #define USE_OTA true                    /* Enable OTA updates from Arduino IDE */
-// #define OTA_PASS "myotapassword12345"   /* OTA password for secure updates */
+/* Arduino OTA Support - Wsparcie Arduino OTA */
+// #define USE_OTA true                    /* Enable OTA updates from Arduino IDE - Włącz aktualizacje OTA z Arduino IDE */
+// #define OTA_PASS "myotapassword12345"   /* OTA password for secure updates - Hasło OTA do bezpiecznych aktualizacji */
 
 /* HTTP Authentication */
-// #define HTTP_USER ""               /* HTTP basic authentication username */
-// #define HTTP_PASS ""               /* HTTP basic authentication password */
+// #define HTTP_USER ""                   /* HTTP basic authentication username - Nazwa użytkownika podstawowego uwierzytelniania HTTP */
+// #define HTTP_PASS ""                   /* HTTP basic authentication password - Podstawowe hasło uwierzytelniania HTTP */
 
-/*----- LCD DISPLAY -----*/
-#define DSP_MODEL DSP_ILI9488
-// #define DSP_MODEL DSP_ILI9341
-// #define DSP_MODEL DSP_ST7796
+/*----- LCD DISPLAY - WYŚWIETLACZ LCD -----*/
+//#define DSP_MODEL DSP_DUMMY
+//#define DSP_MODEL DSP_ST7789            /* Wyświetlacz ST7789V 2` TFT LCD 240x320 */
+//#define DSP_MODEL DSP_ST7789_76         /* Wyświetlacz ST7789 2.25` TFT LCD 76x284 */
+#define DSP_MODEL DSP_NV3007_142          /* Wyświetlacz NV3007 2.79` TFT LCD 142x428 */
+//#define DSP_MODEL DSP_ILI9488
+//#define DSP_MODEL DSP_ILI9341
+//#define DSP_MODEL DSP_ST7796
 
-/*----- OLED DISPLAY -----*/
+/*----- OLED DISPLAY - WYŚWIETLACZ OLED -----*/
 // #define DSP_MODEL      DSP_SSD1322
 
-/*----- DISPLAY PIN SETS -----*/
-#define TFT_DC         9
-#define TFT_CS         10
-#define TFT_RST        -1
-#define BRIGHTNESS_PIN 14
+/*----- DISPLAY PIN SETS - ZESTAW PINÓW WYŚWIETLACZA -----*/
+#define TFT_DC         9                  /* może być DC, RS */
+#define TFT_CS         10                 /* może być CS pin ( ) */
+#define TFT_RST        -1                 /* SPI RST pin (-1 jeśli połączono z EN/RST) */
+#define BRIGHTNESS_PIN 14           /* może być BLK, BL - Pin do regulacji jasności (wyjście 0 - 3v3) */
 /*
-   GPIO 11 - MOSI
-   GPIO 12 - CLK
-   GPIO 13 - MISO  // Ne csatlakoztasd a kijelzőhöz!!! - Do not connect to the LCD display!!!
+   GPIO 11 - MOSI    może być SDA, DIN, SDI
+   GPIO 12 - CLK     może być SCLK, SCL, SCK, CLK
+   GPIO 13 - MISO  // Nie podłączać do wyświetlacza LCD!!! - Do not connect to the LCD display!!! 
 */
 
 /*----- Touch ISP -----*/
@@ -76,125 +96,142 @@ Supported languages: HU, PL, NL, GR, DE (UA Local/namedays/namedays_UA.h is not 
 // #define NEXTION_TX			16
 
 /*----- PCM5102A  DAC -----*/
-#define I2S_DOUT 4
-#define I2S_BCLK 5
-#define I2S_LRC  6
+/* 
+   W przypadku modułu "DAC GY-PCM5102 " pinu SCK nie podłączamy, zworka na SCK ma być zlutowana, tak samo jak zworki z tyłu płyty też muszą być odpowiednio skonfigurowane.
+   W folderze PCM5102A są pliki z instrukcją
+*/
+#define I2S_DOUT 4  /*  = DIN   */                                                                      /* Może być też 17 | Domyślnie 4 */
+#define I2S_BCLK 5  /*  = BCLK   może być BCK         Bit clock - Zegar bitowy */                        /* Może być też 16 | Domyślnie 5 */
+#define I2S_LRC  6  /*  = WSEL   może być LCK, LRCK   Left Right Clock - Zegar lewy prawy */             /* Może być też 18 | Domyślnie 6 */
 
-/*----- ENCODER 1 ------*/
-#define ENC_BTNR 41 // S2
-#define ENC_BTNL 40 // S1
-#define ENC_BTNB 39 // KEY
-// #define ENC_INTERNALPULLUP		true
+/*----- ENCODER 1 - POKRĘTŁO 1 ------*/ // BC11 lub KY-040
+#define ENC_BTNR 41  // S2    lub   DT
+#define ENC_BTNL 40  // S1    lub   CLK
+#define ENC_BTNB 39  // KEY   lub   SW
+// #define ENC_INTERNALPULLUP    true
 
-/*----- ENCODER 2 -----*/
-#define ENC2_BTNR 47 // S2
-#define ENC2_BTNL 48 // S1
-#define ENC2_BTNB 21 // KEY
-// #define ENC2_INTERNALPULLUP	true
+/*----- ENCODER 2 - POKRĘTŁO 2 ------*/ // BC11 lub KY-040
+#define ENC2_BTNR 47  // S2    lub   DT
+#define ENC2_BTNL 48  // S1    lub   CLK
+#define ENC2_BTNB 21  // KEY   lub   SW
+// #define ENC2_INTERNALPULLUP   true
 
-/*----- CLOCK MODUL RTC DS3132 -----*/
+/*----- BUTTONS - PRZYCISKI ------*/
+#define BTN_LEFT  16    //17 PREV               // play/pause
+#define BTN_RIGHT 7    //18 NEXT               // vol -
+#define BTN_UP    17    //16 VOL UP             // up
+#define BTN_DOWN  18    //15 VOL DOWN           // down
+#define BTN_CENTER 15    //7 PLAY/STOP/MODE      // vol +
+#define BTN_INTERNALPULLUP true
+
+/*----- CLOCK MODUL RTC DS3132 - MODUŁ ZEGARA RTC DS3132 -----*/
 // #define RTC_SCL			     7
 // #define RTC_SDA			     8
 // #define RTC_MODULE DS3231
 
-/*----- REMOTE CONTROL INFRARED RECEIVER -----*/
-/*----- Alvásból ébresztéshez a GPIO 2 -őt kell használni, mert a GPIO 38 nem RTC pin. A PCB-n át kell kötni! -----*/
+/*----- REMOTE CONTROL INFRARED RECEIVER - PILOT -----*/
 /*----- To wake from sleep, you must use GPIO 2, because GPIO 38 is not an RTC pin. It must be connected via the PCB! -----*/
-// #define IR_PIN 2  //38
+/*----- Aby wybudzić urządzenie ze stanu uśpienia, należy użyć GPIO 2, ponieważ GPIO 38 nie jest pinem RTC. Musi być podłączony przez płytkę drukowaną! -----*/
+#define IR_PIN 2  //38
 
-/*----- SD CARD -----*/
+/*----- SD CARD - KARTA PAMIĘCI -----*/
 // #define SDC_CS     18
 // #define SDSPISPEED 4000000 /* 4MHz - Slower speed to prevent display flicker on shared SPI bus */
 
-/*----- Színes kijelzőn szürkeárnyalatos képet jelenít meg. -----*/
 /*----- The color display displays a grayscale image -----*/
+/*----- Wyświetla obraz w skali szarości na kolorowym wyświetlaczu. -----*/
 // #define THEME_GRAY
 
-/*----- Az inaktív szegmens megjelenítése az óra számaiban true -> engedélyez, false -> nem engedélyez. -----*/
 /*----- Inactive segments of the clock, true or false. -----*/
-// #define CLOCKFONT_MONO
+/*----- Wyświetlanie nieaktywnego segmentu w numerach zegara true -> włącz, false -> wyłącz. -----*/
+#define CLOCKFONT_MONO
 
-/*----- 12 órás időformátum definiálása. Define 12-hour time format. -----*/
+/*----- Define 12-hour time format. -----*/
+/*----- Zdefiniuj 12-godzinny format czasu. -----*/
 // #define AM_PM_STYLE
 
-/*----- Bekapcsolja az eredeti hétszegmenses óra betűtípust. -----*/
-/*-----  Turn on the original seven-segment font. -----*/
+/*----- Turn on the original seven-segment font. -----*/
+/*----- Włącza oryginalną czcionkę zegara siedmiosegmentowego. -----*/
 // #define CLOCKFONT VT_DIGI_OLD
 
-/*----- Google TTS hanggal mondja be az ídőt megadott nyelven és megadott percenként. -----*/
 /*----- Speaks the time using Google TTS voice in the specified language and every specified minute. -----*/
-#define CLOCK_TTS_ENABLED          false // Enabled (true) or disabled (false)
-#define CLOCK_TTS_LANGUAGE         "HU" // Language ( EN, HU, PL, NL, DE, RU, RO ,FR, GR)
-#define CLOCK_TTS_INTERVAL_MINUTES 15   // Hány percenként mondja be. - How many times a minute does it say.
+/*----- Podaje godzinę za pomocą głosu Google TTS w określonym języku i co określoną minutę. -----*/
+#define CLOCK_TTS_ENABLED     false    // Enabled (true) or disabled (false)
+                                       // Włączone (true) lub wyłączone (false)
+#define CLOCK_TTS_LANGUAGE    "PL"     // Language ( EN, HU, PL, NL, DE, RU, RO ,FR, GR)
+                                       // Język
+#define CLOCK_TTS_INTERVAL_MINUTES 15  // How many times a minute does it say.
+                                       // Ile razy na minutę ma być wypowiadane?
 
-/*----- Ezzel a beállítással nincs görgetés az időjárás sávon. -----*/
 /*----- With this setting there is no scrolling on the weather bar. -----*/
-#define WEATHER_FMT_SHORT
+/*----- Przy tym ustawieniu pasek pogody nie będzie przewijany. -----*/
+//#define WEATHER_FMT_SHORT
 
-/*----- Ezzel a beállítással a teljes időjárás jelentés megjelenik. -----*/
 /*----- With this setting, the full weather report is displayed. -----*/
-// #define EXT_WEATHER  true
+/*----- Przy tym ustawieniu wyświetlany jest pełny raport pogodowy. -----*/
+#define EXT_WEATHER  true
 
-/*----- Ezzel a beállítással a szél sebessége km/h lesz. -----*/
 /*----- With this setting, the wind speed will be km/h. -----*/
+/*----- Przy tym ustawieniu prędkość wiatru będzie wynosić km/h. -----*/
 // #define WIND_SPEED_IN_KMH
 
-/*----- A VU méter két fajta kijelzési módot támogat.
-BOOMBOX_STYLE stílusa, amikor középről két oldalra leng ki a kijelző. Azt itt tudod beállítani.
-Ha a sor elején ott van // jel akkor az alap VU méter működik ami balról jobbra leng ki.
- The VU meter supports two types of display modes.
-BOOMBOX_STYLE is the style when the display swings out from the center to two sides. You can set it here.
-If there is a // sign at the beginning of the line, the basic VU meter is working, swinging out from left to right. -----*/
-// #define BOOMBOX_STYLE
+/*----- The VU meter supports two types of display modes.
+        BOOMBOX_STYLE is the style when the display swings out from the center to two sides. You can set it here.
+        If there is a // sign at the beginning of the line, the basic VU meter is working, swinging out from left to right. -----*/
+/*----- Miernik VU obsługuje dwa tryby wyświetlania.
+        BOOMBOX_STYLE to styl, w którym wyświetlacz wychyla się od środka na dwie strony. Można go ustawić tutaj.
+        Jeśli na początku wiersza znajduje się znak //, działa podstawowy miernik VU, który wychyla się od lewej do prawej. -----*/
+//#define BOOMBOX_STYLE
 
-/*----- A VU méter végén megjelenik egy fehér csík a csúcsértékeknél, ha ezt bekapcsolod. -----*/
-/*----- A white bar will appear at the end of the VU meter at the peak values ​​if you enable this. -----*/
+/*----- A white bar will appear at the end of the VU meter at the peak values ​​if you enable this. The // at the beginning of the line will disable it. -----*/
+/*----- Jeśli włączysz tę funkcję, na końcu miernika VU pojawi się biały pasek przy wartościach szczytowych. Znak // na początku wiersza ją wyłącza. -----*/
 #define VU_PEAK
 
-/*----- Az állomások listájából való választásnál nem kell megnyomni a rotary encoder gombját, kilépéskor autómatikusan
-átvált a csatorna. (by Zsigmond Becskeházi)
- When selecting from the station list, you do not need to press the rotary encoder button, the channel will automatically
-change when you exit. (By Zsigmond Becskehazi) -----*/
+/*----- When selecting from the station list, you do not need to press the rotary encoder button, 
+        the channel will automatically change when you exit. (By Zsigmond Becskehazi) -----*/
+/*----- Wybierając stację z listy, nie trzeba naciskać obrotowego przycisku enkodera. 
+        Kanał zmieni się automatycznie po wyjściu z menu. (Autor: Zsigmond Becskeházi) -----*/
 #define DIRECT_CHANNEL_CHANGE
 
-/*----- Mennyi idő múlva lépjen vissza a főképernyőre az állomások listájából. (másodperc) -----*/
 /*----- How long to return to the main screen from the station list. (seconds) -----*/
+/*----- Jak długo następuje powrót do ekranu głównego z listy stacji. (sekundy) -----*/
 #define STATIONS_LIST_RETURN_TIME 3
 
 /*----- by Maciej Bednarski -----*/
-/*---- Ezt aktíválva a lejátszási listában a cursor mozog le - fel -----*/
 /*---- Activating this will move the cursor up and down in the playlist -----*/
-#define PLAYLIST_SCROLL_MOVING_CURSOR
+/*---- Aktywacja tej opcji spowoduje przesuwanie kursora w górę i w dół listy odtwarzania -----*/
+//#define PLAYLIST_SCROLL_MOVING_CURSOR
 
-/*----- Az itt beállított pin vezérelheti egy audio erősítő tápellátását. Zenelejátszás közben a pin HIGH (magas) állapotban van ami meghúzza az
-erősítő tápellátását kapcsoló relét. Amikor nincs zenelejátszás (STOP vagy a hangerő 0), a pin LOW (alacsony) állapotban van.
-Ez a változás akkor történik, amikor a képernyővédő "while not playing" üzemmódban bekapcsol.
-This pin controls the amplifier's power supply. When music is playing, the pin is set to HIGH to control the relay.
-When music is not playing (stopped or volume is 0), the pin is set to LOW. This change occurs when the screensaver is running. -----*/
-// #define PWR_AMP 2
+/*----- This pin controls the amplifier's power supply. When music is playing, the pin is set to HIGH to control the relay. 
+        When music is not playing (stopped or volume is 0), the pin is set to LOW. This change occurs when the screensaver is running. -----*/
+/*----- Ustawiony tutaj pin może sterować zasilaniem wzmacniacza audio. Podczas odtwarzania muzyki pin jest w stanie wysokim, 
+        co powoduje zasilenie przekaźnika, który włącza zasilanie wzmacniacza. 
+        Gdy muzyka nie jest odtwarzana (STOP lub głośność 0), pin jest w stanie niskim.
+        Ta zmiana następuje, gdy wygaszacz ekranu jest włączony w trybie „bez odtwarzania”. -----*/
+//#define PWR_AMP 2
 
 /*----- by Andrzej Jaroszuk -----*/    
-/*----- Megállítja a lejátszást internet rádió módban, ha a lejátszási puffer elfogy. Utána  újraindítja a lejátszást. -----*/
 /*----- Stops playback in internet radio mode when the playback buffer runs out. Then restarts playback. -----*/
+/*----- Zatrzymuje odtwarzanie w trybie radia internetowego, gdy bufor odtwarzania się zapełni. Następnie wznawia odtwarzanie. -----*/
 #define ENABLE_STALL_WATCHDOG
 
 /*----- by Karol Wysocki -----*/  
-/*----- Letíltja az encoder gomb másodlagos funkcióját. Csak két encoder esetén használd! -----*/
 /*----- Disables the secondary function of the encoder button. Use only if you have two encoders! -----*/
-#define ENCODERS_INDEPENDENT
+/*----- Wyłącza funkcję drugorzędną przycisku enkodera. Używaj tylko wtedy, gdy masz dwa enkodery! -----*/
+//#define ENCODERS_INDEPENDENT
 
-/*----- Ha ez definiálva van a rádió indításakor, mindig az első csatorna lesz beállítva. -----*/
 /*----- If this is defined at radio startup, the first channel will always be set. -----*/
+/*----- Jeżeli zostanie to zdefiniowane przy uruchamianiu radia, zawsze ustawiony będzie pierwszy kanał. -----*/
 //#define ALWAYS_START_FROM_FIRST
 
 /*----- Sleep functions -----*/
-/*----- A WAKE_PIN helyett mostantól két pin állítható be az ébresztéshez: WAKE_PIN1 és WAKE_PIN2 -----*/
-/*----- Így távirányítóval és egy másik gombbal is felébreszthető az eszköz. -----*/
 /*----- Instead of WAKE_PIN, you can now set two pins for wake-up: WAKE_PIN1 and WAKE_PIN2 -----*/
 /*----- This way, you can wake up the device with a remote control and another button. -----*/
-// #define BTN_MODE ENC_BTNB
-//  #define WAKE_PIN1 IR_PIN
-// #define WAKE_PIN2 ENC2_BTNB
+/*----- Zamiast WAKE_PIN możesz teraz ustawić dwa piny do wybudzania: WAKE_PIN1 i WAKE_PIN2 -----*/
+/*----- W ten sposób możesz wybudzić urządzenie za pomocą pilota i innego przycisku. -----*/
+//#define BTN_MODE ENC_BTNB
+#define WAKE_PIN1 IR_PIN        // pin IR
+//#define WAKE_PIN2 ENC2_BTNB     // pin drugiego enkodera
 
 /*----- by Zsolt Simon -----*/
 /*----- Tested on Synology NAS ----- */

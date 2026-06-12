@@ -9,11 +9,11 @@
 #define COLOR_BACKGROUND          0,   0,   0
 
 /*----- META -----*/
-#define COLOR_STATION_NAME      102, 178, 255 // 4, 122, 255  
-#define COLOR_STATION_BG          0,   0,   0   
-#define COLOR_STATION_FILL      102, 178, 255 // 4, 122, 255   
-#define COLOR_SNG_TITLE_1       200, 200, 200
-#define COLOR_SNG_TITLE_2       165, 162, 132
+#define COLOR_STATION_NAME        0,   0,   0   //102, 178, 255  
+#define COLOR_STATION_BG        255, 216,   0   //0,   0,   0   
+#define COLOR_STATION_FILL      255, 216,   0   //102, 178, 255   
+#define COLOR_SNG_TITLE_1       255, 255, 255   //200, 200, 200
+#define COLOR_SNG_TITLE_2       186, 186, 182   //165, 162, 132
 #define COLOR_BITRATE           231, 211,  90
 
 /*----- WEATHER -----*/
@@ -27,7 +27,7 @@
 
 /*----- CLOCK, DATE -----*/
 #define COLOR_CLOCK             255, 255, 255 
-#define COLOR_CLOCK_BG           28,  28,  28
+#define COLOR_CLOCK_BG           47,  47,  47	//28,  28,  28
 #define COLOR_SECONDS           255, 255, 255 
 #define COLOR_DIVIDER           165, 162, 132
 #define COLOR_DATE              255, 255, 255
@@ -38,14 +38,14 @@
 #define COLOR_VU_MIN             44, 212,  32
 
 /*----- FOOTER -----*/
-#define COLOR_VOLBAR_OUT        231, 211,  90
-#define COLOR_VOLBAR_IN         231, 211,  90
-#define COLOR_VOLUME_VALUE      165, 162, 132
-#define COLOR_IP                165, 162, 132
-#define COLOR_CH                165, 162, 132
-#define COLOR_RSSI              165, 162, 132
+#define COLOR_VOLBAR_OUT        255, 216,   0   //231, 211,  90
+#define COLOR_VOLBAR_IN         255, 216,   0   //231, 211,  90
+#define COLOR_VOLUME_VALUE      231, 211,  90   //165, 162, 132
+#define COLOR_IP                130, 130, 130   //165, 162, 132
+#define COLOR_CH                231, 211,  90   //165, 162, 132
+#define COLOR_RSSI              231, 211,  90   //165, 162, 132
 #define COLOR_HEAP               41,  40,  41
-#define COLOR_BUFFER            102, 178, 255
+#define COLOR_BUFFER              4, 122, 255	//102, 178, 255
 
 /*----- PLAYLIST -----*/
 #ifdef PLAYLIST_SCROLL_MOVING_CURSOR
@@ -58,9 +58,9 @@
     #define COLOR_PLAYLIST_3        165,  165,  165
     #define COLOR_PLAYLIST_4        165,  165,  165
 #else
-    #define COLOR_PL_CURRENT          255, 255, 255
-    #define COLOR_PL_CURRENT_BG        24, 122, 255
-    #define COLOR_PL_CURRENT_FILL       4, 122, 255
+    #define COLOR_PL_CURRENT            0,   0,   0		//255, 255, 255
+    #define COLOR_PL_CURRENT_BG       255, 216,   0		//24, 122, 255
+    #define COLOR_PL_CURRENT_FILL     255, 216,   0		//4, 122, 255
     #define COLOR_PLAYLIST_0          115, 115, 115
     #define COLOR_PLAYLIST_1           89,  89,  89
     #define COLOR_PLAYLIST_2           56,  56,  56

@@ -196,9 +196,14 @@ void Display::_buildPager() {
 
     _chtxt = new TextWidget(chtxtConf, 12, false, config.theme.ch, config.theme.background); // Az aktuális csatorna számának kiírásához létrehoz egy TextWidgetet.
 
+    //if (_volbar) { _footer->addWidget(_volbar); }
+    #ifndef HIDE_VOLBAR_ONLY_MAIN_SCREEN
     if (_volbar) { _footer->addWidget(_volbar); }
+    #endif
     if (_voltxt) { _footer->addWidget(_voltxt); }
+    #ifndef HIDE_IP_ONLY_MAIN_SCREEN
     if (_volip) { _footer->addWidget(_volip); }
+    #endif
     if (_rssi) { _footer->addWidget(_rssi); }
     if (_heapbar) { _footer->addWidget(_heapbar); }
     if (_chtxt) {
@@ -224,7 +229,18 @@ void Display::_buildPager() {
     if (_metabackground) { pages[PG_DIALOG]->addWidget(_metabackground); }
     pages[PG_DIALOG]->addWidget(_meta);
     pages[PG_DIALOG]->addWidget(_nums);
+    //pages[PG_DIALOG]->addPage(_footer);
+    #ifndef HIDE_VOL_FOOTER
     pages[PG_DIALOG]->addPage(_footer);
+    #else
+        if (_volbar) { 
+            #ifdef HIDE_IP_ONLY_MAIN_SCREEN
+            pages[PG_DIALOG]->addWidget(_volip);
+            #endif
+            pages[PG_DIALOG]->addWidget(_volbar);
+        }
+    //if (_voltxt) { pages[PG_DIALOG]->addWidget(_voltxt); }
+    #endif
     if (_plbackground) {
         pages[PG_PLAYLIST]->addWidget(_plbackground);
         _plbackground->setHeight(_plwidget->itemHeight());

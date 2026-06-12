@@ -223,7 +223,7 @@ class Config {
     config_t  store;
     station_t station;
     theme_t   theme;
-    bool forceStationName = false; /* Blokada zmiany nazwy stacji (, w playlist) - Blocking the renaming of stations (, in playlist) ~ kc-dev (11.02.26) */
+    bool forceStationName = false; /* Blokada zmiany nazwy stacji (, w playlist) ~ kc-dev (11.02.26) */
 #if IR_PIN != 255
     int       irBtnId;
     uint8_t   irBankId;

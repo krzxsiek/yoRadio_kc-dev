@@ -6,8 +6,13 @@
 #include <Adafruit_ST7789.h>
 
 #if DSP_MODEL==DSP_ST7789_76
-  #include "fonts/bootlogo62x40.h"
+  //#include "fonts/bootlogo62x40.h"
+  #include "fonts/bootlogo160x40.h" /* nowe logo ~ kc-dev (10.02.26) */
   #include "fonts/dsfont35.h"
+#elif DSP_MODEL==DSP_NV3007_142
+  //#include "fonts/bootlogo62x40.h"
+  #include "fonts/bootlogo270x80.h" /* nowe logo ~ kc-dev (10.02.26) */
+  #include "fonts/dsfont52.h"
 #else
   #include "fonts/bootlogo99x64.h"
   #include "fonts/dsfont52.h"
@@ -23,6 +28,10 @@ typedef Adafruit_ST7789 yoDisplay;
 #else
   #if DSP_MODEL==DSP_ST7789
     #include "conf/displayST7789conf.h"
+  #elif DSP_MODEL==DSP_ST7789_76
+    #include "conf/displayST7789_76conf.h"
+  #elif DSP_MODEL==DSP_NV3007_142
+    #include "conf/displayNV3007_142conf.h"
   #endif
 #endif
 

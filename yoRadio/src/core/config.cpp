@@ -798,6 +798,7 @@ void Config::setTitle(const char* title) {
 }
 
 void Config::setStation(const char* station) {
+    if (forceStationName) return; /* Blokada zmiany nazwy stacji (, w playlist) - Blocking the renaming of stations (, in playlist) ~ kc-dev (11.02.26) */
     memset(config.station.name, 0, BUFLEN);
     strlcpy(config.station.name, station, BUFLEN);
     u8fix(config.station.title);
@@ -931,7 +932,16 @@ bool Config::loadStation(uint16_t ls) {
     if (parseCSV(playlist.readStringUntil('\n').c_str(), tmpBuf, tmpBuf2, sOvol)) {
         memset(station.url, 0, BUFLEN);
         memset(station.name, 0, BUFLEN);
-        strncpy(station.name, tmpBuf, BUFLEN);
+        //strncpy(station.name, tmpBuf, BUFLEN);
+        /* Blokada zmiany nazwy stacji (, w playlist) - Blocking the renaming of stations (, in playlist) ~ kc-dev (11.02.26) START */
+	    if (tmpBuf[0] == ',') { // << Mozna ustawic inny znak niz przecinek , - << You can set a character other than a comma,
+	      forceStationName = true;
+	      strlcpy(station.name, tmpBuf + 1, BUFLEN);
+	    } else {
+	      forceStationName = false;
+	      strlcpy(station.name, tmpBuf, BUFLEN);
+	    }
+	    /* Blokada zmiany nazwy stacji (, w playlist) - Blocking the renaming of stations (, in playlist) ~ kc-dev (11.02.26) END */
         strncpy(station.url, tmpBuf2, BUFLEN);
         station.ovol = sOvol;
         setLastStation(ls);

@@ -605,6 +605,7 @@ void VuWidget::_draw() {
         if (played && !_labelsDrawn) {
     #ifdef BOOMBOX_STYLE
         #ifndef DSP_OLED
+            #if (DSP_MODEL != DSP_ST7789_76 && DSP_MODEL != DSP_NV3007_142)  // hide L/R on ST7789_76 and NV3007_142
             // Serial.println("L/R rajzolás");
             int label_width = _bands.height + 15;
             int label_height = _bands.height + 4;
@@ -634,6 +635,7 @@ void VuWidget::_draw() {
             dsp.setCursor(text_x_R, text_y);
             dsp.print("R");
             _labelsDrawn = true;
+            #endif // hide L/R on ST7789_76
         #endif
     #else //  NEM BOOMBOX_STYLE
         #ifndef DSP_OLED

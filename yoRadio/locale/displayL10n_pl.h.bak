@@ -97,10 +97,10 @@ const char const_DlgNextion[]    PROGMEM = "* NEXTION *";
 const char const_getWeather[]    PROGMEM = "";
 const char  const_waitForSD[]    PROGMEM = "INDEX SD";
 
-const char        apNameTxt[]    PROGMEM = "NAZWA SIECI WiFi";
-const char        apPassTxt[]    PROGMEM = "HASŁO";
-const char       bootstrFmt[]    PROGMEM = "Łączę z %s";
-const char        apSettFmt[]    PROGMEM = "STRONA USTAWIEŃ: HTTP://%s/";
+const char        apNameTxt[]    PROGMEM = "AP NAME";
+const char        apPassTxt[]    PROGMEM = "PASSWORD";
+const char       bootstrFmt[]    PROGMEM = "Connecting %s";
+const char        apSettFmt[]    PROGMEM = "SETTINGS PAGE ON: HTTP://%s/";
 // clang-format on
 #ifdef WEATHER_FMT_SHORT
 const char weatherFmt[] PROGMEM = "%.1f\011C  \007  %d hPa  \007  %d%% RH";
