@@ -46,7 +46,7 @@
 ## 2. Instalacja bibliotek / Library Installation
 | 🇵🇱 Polski | 🇬🇧 English |
 |------------|-------------|
-| Przenieś foldery bibliotek z `yoRadio/.pio/libdeps/esp32-s3-devkitc1-n16r8` do `C:\Users\user\Documents\Arduino\libraries`. | Move the library folders from `yoRadio/.pio/libdeps/esp32-s3-devkitc1-n16r8` to `C:\Users\user\Documents\Arduino\libraries`. |
+| Przenieś foldery bibliotek ręcznie z <br />`yoRadio/.pio/libdeps/esp32-s3-devkitc1-n16r8` <br /><a href="Arduino IDE 2.3.10 settings/libraries_pio.png"><img src="Arduino IDE 2.3.10 settings/libraries_pio.png" alt="Libraries" width="300"></a> <br />do `C:\Users\user\Documents\Arduino\libraries` <a href="Arduino IDE 2.3.10 settings/libraries_arduino.png"><img src="Arduino IDE 2.3.10 settings/libraries_arduino.png" alt="Libraries" width="300"></a> | Move library folders manually from <br />`yoRadio/.pio/libdeps/esp32-s3-devkitc1-n16r8` <br /><a href="Arduino IDE 2.3.10 settings/libraries_pio.png"><img src="Arduino IDE 2.3.10 settings/libraries_pio.png" alt="Libraries" width="300"></a> <br />to `C:\Users\user\Documents\Arduino\libraries` <a href="Arduino IDE 2.3.10 settings/libraries_arduino.png"><img src="Arduino IDE 2.3.10 settings/libraries_arduino.png" alt="Libraries" width="300"></a> |
 
 # Modified by kc-dev version history
 ## v0.8.8 | Mod 0.0.1 (12.06.2026)
