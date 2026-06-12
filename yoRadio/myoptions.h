@@ -42,7 +42,7 @@
 
 /* Display name days - Pokaż imieniny
 Supported languages: HU, PL, NL, GR, DE (UA Local/namedays/namedays_UA.h is not filled in.) */
-#define NAMEDAYS_FILE EN
+//#define NAMEDAYS_FILE PL // << Uncomment if you use Polish (or other) language and screen (configuration layout) with name day display - Odkomentuj jeśli używasz języka polskiego (lub innego) i ekranu (układu konfiguracji) z wyświetlaniem imienin
 
 #define USE_BUILTIN_LED false /* The RGB LED does not turn on.. - Dioda LED RGB nie włączy się. */
 
