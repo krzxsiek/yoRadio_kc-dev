@@ -56,10 +56,12 @@
     <img src="PCB/yoRadio ESP32-S3-WROOM-1-N16R8-NV3007_ST7789_76_bb.png" alt="Example connection of elements" width="600">
 </a>
 
-# 🔵 Frame for 3D print / Ramka do druku 3D
+# 🔵 Ramka do druku 3D / Frame for 3D print
 | 🇵🇱 Polski | 🇬🇧 English |
 |------------|-------------|
 |Gotowa ramka na wyświetlacz, do użycia przy projektowaniu obudowy do druku 3D. <br/>W dwóch plikach STL: <a href="3D/Frame.stl">Frame.stl</a>, <a href="3D/Frame-clip.stl">Frame-clip.stl</a>|A ready-made display frame for use when designing a 3D printable enclosure.  <br/>In two STL files: <a href="3D/Frame.stl">Frame.stl</a>, <a href="3D/Frame-clip.stl">Frame-clip.stl</a>|
+
+https://makerworld.com/en/models/2924122-frame-for-lcd-nv3007-2-79-428x142-to-yoradio<br/><br/>
 <a href="3D/frame1.jpg">
     <img src="3D/frame1.jpg" alt="Frame" width="300">
 </a>
