@@ -117,11 +117,11 @@ Supported languages: HU, PL, NL, GR, DE (UA Local/namedays/namedays_UA.h is not 
 // #define ENC2_INTERNALPULLUP   true
 
 /*----- BUTTONS - PRZYCISKI ------*/
-#define BTN_LEFT  16    //17 PREV               // play/pause
-#define BTN_RIGHT 7    //18 NEXT               // vol -
-#define BTN_UP    17    //16 VOL UP             // up
-#define BTN_DOWN  18    //15 VOL DOWN           // down
-#define BTN_CENTER 15    //7 PLAY/STOP/MODE      // vol +
+#define BTN_LEFT  16    // PREV
+#define BTN_RIGHT 7     // NEXT
+#define BTN_UP    17    // VOL UP
+#define BTN_DOWN  18    // VOL DOWN
+#define BTN_CENTER 15   // PLAY/STOP/MODE
 #define BTN_INTERNALPULLUP true
 
 /*----- CLOCK MODUL RTC DS3132 - MODUŁ ZEGARA RTC DS3132 -----*/
