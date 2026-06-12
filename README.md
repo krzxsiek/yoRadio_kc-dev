@@ -1,48 +1,61 @@
 # yoRadio V-Tom (Modded by kc-dev)
-Dodałem obsługę następujących wyświetlaczy // I've added support for the following displays:
+
+| 🇵🇱 Polski | 🇬🇧 English |
+|------------|-------------|
+| Dodałem obsługę następujących wyświetlaczy: | I've added support for the following displays: |
+
 - NV3007 428x142 2.79" https://pl.aliexpress.com/item/1005012251243789.html
 - ST7789 284x76 2.25" https://aliexpress.com/item/1005009016973081.html
 
-### NV3007 428x142 2.79"
+## NV3007 428x142 2.79"
+
 <a href="https://youtu.be/3gqVbwaUH2E?si=ETXbSLO5y7pVvZy1">
-    <img src="https://img.youtube.com/vi/3gqVbwaUH2E/maxresdefault.jpg" width="400" alt="NV3007 428x142 2.79&quot; (Układ 1)">
+    <img src="https://img.youtube.com/vi/3gqVbwaUH2E/maxresdefault.jpg" width="400" alt="NV3007 428x142 2.79&quot; (Layout 1)">
 </a>
+
 <a href="https://youtu.be/OIB90S6o9-4?si=mor6tHdsKJRHwaaY">
-    <img src="https://img.youtube.com/vi/OIB90S6o9-4/maxresdefault.jpg" width="400" alt="NV3007 428x142 2.79&quot; (Układ 2)">
+    <img src="https://img.youtube.com/vi/OIB90S6o9-4/maxresdefault.jpg" width="400" alt="NV3007 428x142 2.79&quot; (Layout 2)">
 </a>
 
-### ST7789 284x76 2.25"
+## ST7789 284x76 2.25"
+
 <a href="https://youtu.be/pyjyYVzSvXk?si=yCLboO9ejS3hEOCV">
-    <img src="https://img.youtube.com/vi/pyjyYVzSvXk/maxresdefault.jpg" width="400" alt="ST7789 284x76 2.25&quot; ">
+    <img src="https://img.youtube.com/vi/pyjyYVzSvXk/maxresdefault.jpg" width="400" alt="ST7789 284x76 2.25&quot;">
 </a>
 
-#### [PL]
-Dla wyświetlacza NV3007 2.79' 428x142 są przygotowane dwa pliki konfiguracyjne (dwa layouty), <br />
-można podmienić plik `\src\displays\conf\displayNV3007_142conf.h` **(Układ 1)** <br />
-z plikiem `\src\displays\conf\displayNV3007_142conf.h.kopia` **(Układ 2)** wedle uznania ;)
 
-Obsługa wyświetlacza NV3007 została dodana w bibliotece "Adafruit ST7735 and ST7789 Library WITHOUT SD" na podstawie plików z biblioteki "Arduino GFX"
+## Informacje / Information
 
-Oprócz bibliotek i konfiguracji wyświetlacza, zostało dodanych kilka usprawnień w innych plikach potrzebnych do lepszego wyświetlania niektórych elementów na wyswietlaczu, między innymi adresu IP na ekranie głośności (aby nie zaśmiecał ekranu głównego na którym i tak mamy ograniczoną ilośc miejsca).
-Dodałem też swoją małą modyfikacje umożliwiającą ustawienie na stałe nazwy stacji poprzez dodanie przecinka przed naazwą stacji ", NAZWA STACJI". Przydatne przy stacjach które wysyłają blędnie swoją nazwę stacji w meta tagach, a tak możemy ustawić ją na stałe lub po swojemu.
+| 🇵🇱 Polski | 🇬🇧 English |
+|------------|-------------|
+| Dla wyświetlacza **NV3007 2.79" 428x142** przygotowano dwa pliki konfiguracyjne (dwa layouty). <br />- **(Układ 1)** w pliku `src/displays/conf/displayNV3007_142conf.h` <br />- **(Układ 2)** w pliku `src/displays/conf/displayNV3007_142conf.h.kopia` <br /><br />Aby zmienić układ wystarczy zamienić te pliki nazwami. | Two configuration files (two layouts) have been prepared for the NV3007 2.79" 428x142 display.<br />- **(Layout 1)** in the `src/displays/conf/displayNV3007_142conf.h` file <br />- **(Layout 2)** in the `src/displays/conf/displayNV3007_142conf.h.copy` file <br /><br />To change the layout, simply swap the file names. <br /><br /> | 
+<br /><br />Obsługa wyświetlacza **NV3007** została dodana do biblioteki **"Adafruit ST7735 and ST7789 Library WITHOUT SD"** na podstawie plików z biblioteki **"Arduino GFX"**. <br /><br /> Oprócz bibliotek i konfiguracji wyświetlacza dodano kilka usprawnień poprawiających wyświetlanie niektórych elementów interfejsu, m.in. przeniesiono adres IP na ekran głośności, aby nie zajmował miejsca na ekranie głównym. <br /><br /> Dodano również możliwość wymuszenia własnej nazwy stacji poprzez dodanie przecinka przed nazwą, np. `,MOJA STACJA`. Jest to przydatne dla stacji, które wysyłają nieprawidłowe dane w metatagach. <br /><br /> | Support for the **NV3007** display has been added to the **"Adafruit ST7735 and ST7789 Library WITHOUT SD"** library based on files from the **"Arduino GFX"** library. <br /><br /> In addition to the display libraries and configuration files, several improvements have been made to enhance the display of certain interface elements, including moving the IP address to the volume screen to avoid cluttering the main screen. <br /><br />I also added the ability to force a custom station name by adding a comma before the station name, e.g. `,MY STATION`. This is useful for stations that provide incorrect metadata tags. <br /><br /> |
 
-#### [EN]
-For the NV3007 2.79' 428x142 display, there are two configuration files (two layouts). <br />
-You can replace the `\src\displays\conf\displayNV3007_142conf.h` file **(Layout 1)** with the <br />`\src\displays\conf\displayNV3007_142conf.h.kopia` file **(Layout 2)** as needed.
 
-Support for the NV3007 display has been added in the "Adafruit ST7735 and ST7789 Library WITHOUT SD" library, based on files from the "Arduino GFX" library.
+# Instrukcje dla Arduino IDE (testowałem na wersji 2.3.10) / Instructions for Arduino IDE (tested on version 2.3.10)
+## 1. Ustawienia ArduinoIDE / Arduino IDE Settings
 
-In addition to the display libraries and configuration files, several improvements have been added to other files needed to better display certain elements on the display, including the IP address on the volume screen (so it doesn't clutter the main screen, which already has limited space).
+<a href="Arduino IDE 2.3.10 settings/PL_ArduinoIDE_USTAWIENIA.png">
+    <img src="Arduino IDE 2.3.10 settings/PL_ArduinoIDE_USTAWIENIA.png" alt="Arduino IDE 2.3.10 Settings (PL)" width="300">
+</a>
 
-I also added my own small modification, allowing you to permanently set the station name by adding a comma before the station name, ",STATION NAME." Useful for stations that send their station name incorrectly in meta tags, so we can set it permanently or customize it.
+<a href="Arduino IDE 2.3.10 settings/EN_ArduinoIDE_SETTINGS.png">
+    <img src="Arduino IDE 2.3.10 settings/EN_ArduinoIDE_SETTINGS.png" alt="Arduino IDE 2.3.10 Settings (EN)" width="300">
+</a>
 
-~ Krzysztof Cielma (kc-dev) (09.06.26) 
+## 2. Instalacja bibliotek / Library Installation
+| 🇵🇱 Polski | 🇬🇧 English |
+|------------|-------------|
+| Przenieś foldery bibliotek z `yoRadio/.pio/libdeps/esp32-s3-devkitc1-n16r8` do `C:\Users\user\Documents\Arduino\libraries`. | Move the library folders from `yoRadio/.pio/libdeps/esp32-s3-devkitc1-n16r8` to `C:\Users\user\Documents\Arduino\libraries`. |
 
-## Modified by kc-dev version history:  
-### v0.8.8 | Mod 0.0.1 (12.06.2026)
-- Add support for NV3007 428x142 2.79" and ST7789 284x76 2.25"
+# Modified by kc-dev version history
+## v0.8.8 | Mod 0.0.1 (12.06.2026)
+- Added support for NV3007 428x142 2.79" and ST7789 284x76 2.25"
 
-=======================================================<br /><br /><br /><br /><br /><br /><br /><br />
+
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+==============\\// Original vTom README \\//==============<br /><br />
 
 # yoRadio V-Tom
 <img src="images/front_radio.png" alt="Projekt logó" width="800">
