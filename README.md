@@ -1,4 +1,4 @@
-# yoRadio V-Tom (Modded by kc-dev) UWAGA! Modyfikacja w trakcie przygotowywania! Pliki nie są jeszcze gotowe.
+# yoRadio V-Tom (Modded by kc-dev)
 Dodałem obsługę następujących wyświetlaczy // I've added support for the following displays:
 - NV3007 428x142 2.79" https://pl.aliexpress.com/item/1005012251243789.html
 - ST7789 284x76 2.25" https://aliexpress.com/item/1005009016973081.html
@@ -24,7 +24,7 @@ z plikiem `\src\displays\conf\displayNV3007_142conf.h.kopia` **(Układ 2)** wedl
 Obsługa wyświetlacza NV3007 została dodana w bibliotece "Adafruit ST7735 and ST7789 Library WITHOUT SD" na podstawie plików z biblioteki "Arduino GFX"
 
 Oprócz bibliotek i konfiguracji wyświetlacza, zostało dodanych kilka usprawnień w innych plikach potrzebnych do lepszego wyświetlania niektórych elementów na wyswietlaczu, między innymi adresu IP na ekranie głośności (aby nie zaśmiecał ekranu głównego na którym i tak mamy ograniczoną ilośc miejsca).
-Dodałem też swoją małą modyfikacje umożliwiającą ustawienie na stałe nazwy stacji poprzez dodanie przecinka przed nqazwą stacji ", NAZWA STACJI". 
+Dodałem też swoją małą modyfikacje umożliwiającą ustawienie na stałe nazwy stacji poprzez dodanie przecinka przed naazwą stacji ", NAZWA STACJI". Przydatne przy stacjach które wysyłają blędnie swoją nazwę stacji w meta tagach, a tak możemy ustawić ją na stałe lub po swojemu.
 
 #### [EN]
 For the NV3007 2.79' 428x142 display, there are two configuration files (two layouts). <br />
@@ -34,11 +34,15 @@ Support for the NV3007 display has been added in the "Adafruit ST7735 and ST7789
 
 In addition to the display libraries and configuration files, several improvements have been added to other files needed to better display certain elements on the display, including the IP address on the volume screen (so it doesn't clutter the main screen, which already has limited space).
 
-I also added my own small modification, allowing you to permanently set the station name by adding a comma before the station name, ",STATION NAME."
+I also added my own small modification, allowing you to permanently set the station name by adding a comma before the station name, ",STATION NAME." Useful for stations that send their station name incorrectly in meta tags, so we can set it permanently or customize it.
 
 ~ Krzysztof Cielma (kc-dev) (09.06.26) 
 
-==========================================================================
+## Modified by kc-dev version history:  
+### v0.8.8 | Mod 0.0.1 (12.06.2026)
+- Add support for NV3007 428x142 2.79" and ST7789 284x76 2.25"
+
+=======================================================<br /><br /><br /><br /><br /><br /><br /><br />
 
 # yoRadio V-Tom
 <img src="images/front_radio.png" alt="Projekt logó" width="800">
