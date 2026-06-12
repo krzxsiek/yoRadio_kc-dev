@@ -48,6 +48,15 @@
 |------------|-------------|
 | Przenieś foldery bibliotek ręcznie z <br />`yoRadio/.pio/libdeps/esp32-s3-devkitc1-n16r8` <br /><a href="Arduino IDE 2.3.10 settings/libraries_pio.png"><img src="Arduino IDE 2.3.10 settings/libraries_pio.png" alt="Libraries" width="300"></a> <br />do `C:\Users\user\Documents\Arduino\libraries` <a href="Arduino IDE 2.3.10 settings/libraries_arduino.png"><img src="Arduino IDE 2.3.10 settings/libraries_arduino.png" alt="Libraries" width="300"></a> | Move library folders manually from <br />`yoRadio/.pio/libdeps/esp32-s3-devkitc1-n16r8` <br /><a href="Arduino IDE 2.3.10 settings/libraries_pio.png"><img src="Arduino IDE 2.3.10 settings/libraries_pio.png" alt="Libraries" width="300"></a> <br />to `C:\Users\user\Documents\Arduino\libraries` <a href="Arduino IDE 2.3.10 settings/libraries_arduino.png"><img src="Arduino IDE 2.3.10 settings/libraries_arduino.png" alt="Libraries" width="300"></a> |
 
+# Example connection of elements / Przykładowe podłączenie elementów
+| 🇵🇱 Polski | 🇬🇧 English |
+|------------|-------------|
+|Przykładowe podłączenie elementów według mojego pliku `myoptions.h`|Example connection of elements according to my `myoptions.h` file|
+<a href="PCB/yoRadio ESP32-S3-WROOM-1-N16R8-NV3007_ST7789_76_bb.png">
+    <img src="PCB/yoRadio ESP32-S3-WROOM-1-N16R8-NV3007_ST7789_76_bb.png" alt="Example connection of elements" width="600">
+</a>
+
+
 # Modified by kc-dev version history
 ## v0.8.8 | Mod 0.0.1 (12.06.2026)
 - Added support for NV3007 428x142 2.79" and ST7789 284x76 2.25"
