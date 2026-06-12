@@ -24,7 +24,7 @@
 </a>
 
 
-## Informacje / Information
+## 🔵 Informacje / Information
 
 | 🇵🇱 Polski | 🇬🇧 English |
 |------------|-------------|
@@ -32,8 +32,8 @@
 <br /><br />Obsługa wyświetlacza **NV3007** została dodana do biblioteki **"Adafruit ST7735 and ST7789 Library WITHOUT SD"** na podstawie plików z biblioteki **"Arduino GFX"**. <br /><br /> Oprócz bibliotek i konfiguracji wyświetlacza dodano kilka usprawnień poprawiających wyświetlanie niektórych elementów interfejsu, m.in. przeniesiono adres IP na ekran głośności, aby nie zajmował miejsca na ekranie głównym. <br /><br /> Dodano również możliwość wymuszenia własnej nazwy stacji poprzez dodanie przecinka przed nazwą, np. `,MOJA STACJA`. Jest to przydatne dla stacji, które wysyłają nieprawidłowe dane w metatagach. <br /><br /> | Support for the **NV3007** display has been added to the **"Adafruit ST7735 and ST7789 Library WITHOUT SD"** library based on files from the **"Arduino GFX"** library. <br /><br /> In addition to the display libraries and configuration files, several improvements have been made to enhance the display of certain interface elements, including moving the IP address to the volume screen to avoid cluttering the main screen. <br /><br />I also added the ability to force a custom station name by adding a comma before the station name, e.g. `,MY STATION`. This is useful for stations that provide incorrect metadata tags. <br /><br /> |
 
 
-# Instrukcje dla Arduino IDE (testowałem na wersji 2.3.10) / Instructions for Arduino IDE (tested on version 2.3.10)
-## 1. Ustawienia ArduinoIDE / Arduino IDE Settings
+# 🔵 Instrukcje dla Arduino IDE (testowałem na wersji 2.3.10) / Instructions for Arduino IDE (tested on version 2.3.10)
+## 🔹1. Ustawienia ArduinoIDE / Arduino IDE Settings
 
 <a href="Arduino IDE 2.3.10 settings/PL_ArduinoIDE_USTAWIENIA.png">
     <img src="Arduino IDE 2.3.10 settings/PL_ArduinoIDE_USTAWIENIA.png" alt="Arduino IDE 2.3.10 Settings (PL)" width="300">
@@ -43,12 +43,12 @@
     <img src="Arduino IDE 2.3.10 settings/EN_ArduinoIDE_SETTINGS.png" alt="Arduino IDE 2.3.10 Settings (EN)" width="300">
 </a>
 
-## 2. Instalacja bibliotek / Library Installation
+## 🔹2. Instalacja bibliotek / Library Installation
 | 🇵🇱 Polski | 🇬🇧 English |
 |------------|-------------|
 | Przenieś foldery bibliotek ręcznie z <br />`yoRadio/.pio/libdeps/esp32-s3-devkitc1-n16r8` <br /><a href="Arduino IDE 2.3.10 settings/libraries_pio.png"><img src="Arduino IDE 2.3.10 settings/libraries_pio.png" alt="Libraries" width="300"></a> <br />do `C:\Users\user\Documents\Arduino\libraries` <a href="Arduino IDE 2.3.10 settings/libraries_arduino.png"><img src="Arduino IDE 2.3.10 settings/libraries_arduino.png" alt="Libraries" width="300"></a> | Move library folders manually from <br />`yoRadio/.pio/libdeps/esp32-s3-devkitc1-n16r8` <br /><a href="Arduino IDE 2.3.10 settings/libraries_pio.png"><img src="Arduino IDE 2.3.10 settings/libraries_pio.png" alt="Libraries" width="300"></a> <br />to `C:\Users\user\Documents\Arduino\libraries` <a href="Arduino IDE 2.3.10 settings/libraries_arduino.png"><img src="Arduino IDE 2.3.10 settings/libraries_arduino.png" alt="Libraries" width="300"></a> |
 
-# Example connection of elements / Przykładowe podłączenie elementów
+# 🔵 Example connection of elements / Przykładowe podłączenie elementów
 | 🇵🇱 Polski | 🇬🇧 English |
 |------------|-------------|
 |Przykładowe podłączenie elementów według mojego pliku `myoptions.h`|Example connection of elements according to my `myoptions.h` file|
@@ -56,8 +56,19 @@
     <img src="PCB/yoRadio ESP32-S3-WROOM-1-N16R8-NV3007_ST7789_76_bb.png" alt="Example connection of elements" width="600">
 </a>
 
+# 🔵 Frame for 3D print / Ramka do druku 3D
+| 🇵🇱 Polski | 🇬🇧 English |
+|------------|-------------|
+|Gotowa ramka na wyświetlacz, do użycia przy projektowaniu obudowy do druku 3D. <br/>W dwóch plikach STL: <a href="3D/Frame.stl">Frame.stl</a>, <a href="3D/Frame-clip.stl">Frame-clip.stl</a>|A ready-made display frame for use when designing a 3D printable enclosure.  <br/>In two STL files: <a href="3D/Frame.stl">Frame.stl</a>, <a href="3D/Frame-clip.stl">Frame-clip.stl</a>|
+<a href="3D/frame1.jpg">
+    <img src="3D/frame1.jpg" alt="Frame" width="300">
+</a>
+<a href="3D/frame2.jpg">
+    <img src="3D/frame2.jpg" alt="Frame" width="300">
+</a>
 
-# Modified by kc-dev version history
+
+# 🔵 Modified by kc-dev version history
 ## v0.8.8 | Mod 0.0.1 (12.06.2026)
 - Added support for NV3007 428x142 2.79" and ST7789 284x76 2.25"
 
