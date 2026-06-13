@@ -48,10 +48,10 @@
 |------------|-------------|
 | Przenieś foldery bibliotek ręcznie z <br />`yoRadio/.pio/libdeps/esp32-s3-devkitc1-n16r8` <br /><a href="Arduino IDE 2.3.10 settings/libraries_pio.png"><img src="Arduino IDE 2.3.10 settings/libraries_pio.png" alt="Libraries" width="300"></a> <br />do `C:\Users\user\Documents\Arduino\libraries` <a href="Arduino IDE 2.3.10 settings/libraries_arduino.png"><img src="Arduino IDE 2.3.10 settings/libraries_arduino.png" alt="Libraries" width="300"></a> | Move library folders manually from <br />`yoRadio/.pio/libdeps/esp32-s3-devkitc1-n16r8` <br /><a href="Arduino IDE 2.3.10 settings/libraries_pio.png"><img src="Arduino IDE 2.3.10 settings/libraries_pio.png" alt="Libraries" width="300"></a> <br />to `C:\Users\user\Documents\Arduino\libraries` <a href="Arduino IDE 2.3.10 settings/libraries_arduino.png"><img src="Arduino IDE 2.3.10 settings/libraries_arduino.png" alt="Libraries" width="300"></a> |
 
-# 🔵 Example connection of elements / Przykładowe podłączenie elementów
+# 🔵 Przykładowe podłączenie elementów / Example connection of elements
 | 🇵🇱 Polski | 🇬🇧 English |
 |------------|-------------|
-|Przykładowe podłączenie elementów według mojego pliku `myoptions.h`|Example connection of elements according to my `myoptions.h` file|
+|Przykładowe podłączenie elementów według mojego pliku `myoptions.h` zastosowanym przy jednym z moich projektów. <br/><br/>Wyświetlacz NV3007 (428x142) i ST7789 (284x76) działają przy identycznym podłączeniu pinów. <br/>Różnica jest tylko na pinie BLK jeśli chodzi o obsługę podświetlenia ponieważ działa na odwrót (tzn. ściemnianie i rozjaśnianie w przypadku ST7789 działa na odwróconej zasadzie) <br/><br/>Przy podłączeniu odbiornika IR (KY-022 lub podobnych) polecam wlutować na płytce kondensatory: 220uF (elektrolityczny), 100nF (ceramiczny) aby odczyty z pilota nie wariowały przez zakłócenia. <br/>⚠️ **Uwaga! Pamiętaj o poprawnym ustawieniu polaryzaji +/- kondensatora elektrolitycznego!** <br/><br/> Moduł DAC GY-PCM5102 zaraz po zakupie wymaga zlutowania zworek (<a href="PCM5102A/jumpers.png">przykład tutaj</a>)|Example connection of elements according to my `myoptions.h` file used in one of my projects. <br /><br/>The NV3007 (428x142) and ST7789 (284x76) displays operate with identical pin connections. <br/>The only difference is the BLK pin, which handles the backlight in reverse (i.e., dimming and brightening on the ST7789 works in reverse). <br /><br/>When connecting an IR receiver (KY-022 or similar), I recommend soldering capacitors on the board: 220uF (electrolytic), 100nF (ceramic) so that the readings from the remote control do not fluctuate due to interference. <br/>⚠️ **Attention! Remember to set the correct +/- polarity of the electrolytic capacitor!** <br/><br/> The DAC GY-PCM5102 module requires soldering the jumpers immediately after purchase (<a href="PCM5102A/jumpers.png">example here</a>)|
 <a href="PCB/yoRadio ESP32-S3-WROOM-1-N16R8-NV3007_ST7789_76_bb.png">
     <img src="PCB/yoRadio ESP32-S3-WROOM-1-N16R8-NV3007_ST7789_76_bb.png" alt="Example connection of elements" width="600">
 </a>
@@ -73,6 +73,9 @@ https://makerworld.com/en/models/2924122-frame-for-lcd-nv3007-2-79-428x142-to-yo
 # 🔵 Modified by kc-dev version history
 ## v0.8.8 | Mod 0.0.1 (12.06.2026)
 - Added support for NV3007 428x142 2.79" and ST7789 284x76 2.25"
+## v0.8.8 | Mod 0.0.2 (13.06.2026)
+- Add fix for KY-022 IR Receiver module
+- Add a graphic with an example of connecting elements prepared in the Fritzing program
 
 
 
