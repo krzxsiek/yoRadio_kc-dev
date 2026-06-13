@@ -60,11 +60,11 @@
 | 🇵🇱 Polski | 🇬🇧 English |
 |------------|-------------|
 |Tak u siebie przylutowałem filtr do modułu KY-022 (nie miałem kondensatora 220uF więc użyłem dwóch 100uF)|This is how I soldered the filter to the KY-022 module (I didn't have a 220uF capacitor, so I used two 100uF ones)|
-<a href="images/KY-022_FRONT.jpg">
-    <img src="images/KY-022_FRONT.jpg" alt=" IR receiver KY-022" width="300">
+<a href="images/KY-022/KY-022_FRONT.jpg">
+    <img src="images/KY-022/KY-022_FRONT.jpg" alt=" IR receiver KY-022" width="300">
 </a>
 <a href="images/KY-022_BACK.jpg">
-    <img src="images/KY-022_BACK.jpg" alt=" IR receiver KY-022" width="300">
+    <img src="images/KY-022/KY-022_BACK.jpg" alt=" IR receiver KY-022" width="300">
 </a>
 
 
