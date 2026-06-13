@@ -23,7 +23,7 @@
     niektórych elementów na wyswietlaczu, między innymi adresu IP na ekranie głośności (aby nie zaśmiecał ekranu głównego na którym i tak mamy ograniczoną ilośc miejsca).
     Dodałem też swoją małą modyfikacje umożliwiającą ustawienie na stałe nazwy stacji poprzez dodanie przecinka przed nqazwą stacji ", NAZWA STACJI". 
 
-     ~ Krzysztof Cielma (kc-dev) (09.06.26) 
+     ~ Krzysztof Cielma (kc-dev) (12.06.26) 
 */
 
 #ifndef myoptions_h

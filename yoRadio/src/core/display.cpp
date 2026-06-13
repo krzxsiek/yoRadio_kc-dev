@@ -229,7 +229,6 @@ void Display::_buildPager() {
     if (_metabackground) { pages[PG_DIALOG]->addWidget(_metabackground); }
     pages[PG_DIALOG]->addWidget(_meta);
     pages[PG_DIALOG]->addWidget(_nums);
-    //pages[PG_DIALOG]->addPage(_footer);
     #ifndef HIDE_VOL_FOOTER
     pages[PG_DIALOG]->addPage(_footer);
     #else

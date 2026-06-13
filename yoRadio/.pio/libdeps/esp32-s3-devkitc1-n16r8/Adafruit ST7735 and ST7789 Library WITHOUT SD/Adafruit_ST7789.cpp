@@ -1,7 +1,7 @@
 #include "Adafruit_ST7789.h"
 #include "Adafruit_ST77xx.h"
 
-/* Biblioteka zmodyfikowana pod dodatkową obsługę wyświetlacza na sterowniku NV3007 2.79" ~ Krzysztof Cielma (kc-dev) (09.06.26) */
+/* Biblioteka zmodyfikowana pod dodatkową obsługę wyświetlacza na sterowniku NV3007 2.79" ~ Krzysztof Cielma (kc-dev) (12.06.26) */
 
 // CONSTRUCTORS ************************************************************
 
@@ -142,7 +142,7 @@ void Adafruit_ST7789::init(uint16_t width, uint16_t height, uint8_t mode) {
 void Adafruit_ST7789::setRotation(uint8_t m) {
   uint8_t madctl = 0;
 
-  /* NV3007 2.79' ~ kc-dev (09.06.26) | START */
+  /* NV3007 2.79' ~ kc-dev (12.06.26) | START */
   if (windowWidth == 142 && windowHeight == 428) {
 
     rotation = m & 3;
@@ -197,7 +197,7 @@ void Adafruit_ST7789::setRotation(uint8_t m) {
     sendCommand(ST77XX_MADCTL, &madctl, 1);
     return;
   }
-  /* NV3007 2.79' ~ kc-dev (09.06.26) | END */
+  /* NV3007 2.79' ~ kc-dev (12.06.26) | END */
 
   rotation = m & 3; // can't be higher than 3
 

@@ -101,6 +101,7 @@ class Display {
     void flip(){}
     void invert(){}
     void setContrast(){}
+    void setBrightnessPercent(uint8_t percent){} /* fix dla DUMMY display  ~ kc-dev (29.03.26) */
     bool deepsleep(){return true;}
     void wakeup(){}
     void printPLitem(uint8_t pos, const char* item){}

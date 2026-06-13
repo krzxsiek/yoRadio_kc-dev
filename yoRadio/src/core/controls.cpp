@@ -15,6 +15,9 @@ long encOldPosition = 0;
 long enc2OldPosition = 0;
 int  lpId = -1;
 
+/* fix sleep ~ kc-dev (05.04.26) */
+int lastIrTarget = -1;
+
 uint32_t wakeCheckUntil = 0;
 bool     waitingForWakeIr = false;
 
@@ -376,21 +379,63 @@ void irLoop() {
             return;
         }
         // if (!irResults.repeat /* && irResults.command!=0*/) { irVolRepeat = 0; }
-        if (irResults.repeat) {
+        /*if (irResults.repeat) {
             switch (irVolRepeat) {
                 case 1: controlsEvent(display.mode() == STATIONS ? false : true); break;
 
                 case 2: controlsEvent(display.mode() == STATIONS ? true : false); break;
             }
-            irrecv.resume(); // ← add (MB)
-            return;          // ← add (MB)
+        } else {
+            irVolRepeat = 0;
+        }*/ /* < old code - fix sleep ~ kc-dev (05.04.26) */
+
+        /* fix sleep ~ kc-dev (05.04.26) START */
+        if (irResults.repeat) {
+            switch (lastIrTarget) {
+
+                case IR_VOLUME_UP:
+                    controlsEvent(display.mode() == STATIONS ? false : true);
+                    break;
+
+                case IR_VOLUME_DOWN:
+                    controlsEvent(display.mode() == STATIONS ? true : false);
+                    break;
+
+                case IR_NEXT:
+                    if (display.mode() == STATIONS)
+                        controlsEvent(false);
+                    else
+                        player.next();
+                    break;
+
+                case IR_PREV:
+                    if (display.mode() == STATIONS)
+                        controlsEvent(true);
+                    else
+                        player.prev();
+                    break;
+
+                default:
+                    break;
+            }
+
+            irrecv.resume();
+            return;
         } else {
             irVolRepeat = 0;
         }
+        /* fix sleep ~ kc-dev (05.04.26) END */
+
+
         for (int target = 0; target < 19; target++) {
             for (int j = 0; j < 3; j++) {
                 // Serial.printf("Comparing with target %d, slot %d: 0x%08lX == 0x%08lX\n", target, j, (uint32_t)config.ircodes.irVals[target][j], (uint32_t)irResults.value);
                 if (config.ircodes.irVals[target][j] == irResults.value) {
+                    /* fix sleep ~ kc-dev (05.04.26) START*/
+                    if (!irResults.repeat) {
+                        lastIrTarget = target;
+                    }
+                    /* fix sleep ~ kc-dev (05.04.26) END */
                     if (network.status != CONNECTED && network.status != SDREADY && target != IR_MODE) return;
                     if (target != IR_MODE && display.mode() == LOST) return;
                     if (display.mode() == SCREENSAVER || display.mode() == SCREENBLANK) {
@@ -399,6 +444,7 @@ void irLoop() {
                     }
                     switch (target) {
                         case IR_POWER: {
+                            if (irResults.repeat) break; /* < fix sleep ~ kc-dev (05.04.26) */
                             Serial.println("IR POWER -> sleep");
                             display.putRequest(NEWMODE, SLEEPING);
                             break;

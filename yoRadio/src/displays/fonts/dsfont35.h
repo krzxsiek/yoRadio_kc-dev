@@ -12,7 +12,7 @@
   #include "DS_DIGI28pt7b.h"
 #endif
 
-#if DSP_MODEL == DSP_ST7789_76 || DSP_MODEL==DSP_NV3007_142 /* ST7789_76 and NV3007 mod  ~ kc-dev (09.06.26) */
+#if DSP_MODEL == DSP_ST7789_76 || DSP_MODEL==DSP_NV3007_142 /* ST7789_76 and NV3007 mod  ~ kc-dev (12.06.26) */
   #include "VT_DIGI_20x11s.h"
   //#include "DS_DIGI28pt7b_ST7789_76.h"
   #include "VT_DIGI_34x19.h"
