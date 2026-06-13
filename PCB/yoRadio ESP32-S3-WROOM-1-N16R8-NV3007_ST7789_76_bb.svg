@@ -11,6 +11,9 @@
    id="svg3297"
    sodipodi:docname="yoRadio ESP32-S3-WROOM-1-N16R8-NV3007_ST7789_76_bb.svg"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   inkscape:export-filename="yoRadio ESP32-S3-WROOM-1-N16R8-NV3007_ST7789_76_bb.png"
+   inkscape:export-xdpi="243.90245"
+   inkscape:export-ydpi="243.90245"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -79,15 +82,24 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="in"
-     inkscape:zoom="6.9685475"
-     inkscape:cx="698.71089"
-     inkscape:cy="202.83998"
+     inkscape:zoom="3.4842737"
+     inkscape:cx="609.02218"
+     inkscape:cy="300.06253"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g3170" />
+     inkscape:current-layer="svg3297" />
+  <rect
+     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.16;stroke-linecap:round;stroke-dasharray:none"
+     id="rect3314"
+     width="626.81592"
+     height="488.19315"
+     x="-18.082064"
+     y="-23.247292"
+     rx="9.2709302e-16"
+     ry="9.2709302e-16" />
   <g
      id="watermark"
      transform="translate(-495.23516,4.8706134)">
@@ -18593,8 +18605,8 @@
              sodipodi:role="line"
              id="tspan3305-9"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.1;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;letter-spacing:0.824999px;text-anchor:middle;stroke-width:2.83464"
-             x="20.592516"
-             y="28.279133">electrolitic</tspan><tspan
+             x="20.592514"
+             y="28.279133">electrolytic</tspan><tspan
              sodipodi:role="line"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.1;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;letter-spacing:0.824999px;text-anchor:middle;stroke-width:2.83464"
              x="21.005013"
