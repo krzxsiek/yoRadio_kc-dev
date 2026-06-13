@@ -55,6 +55,18 @@
 <a href="PCB/yoRadio ESP32-S3-WROOM-1-N16R8-NV3007_ST7789_76_bb.png">
     <img src="PCB/yoRadio ESP32-S3-WROOM-1-N16R8-NV3007_ST7789_76_bb.png" alt="Example connection of elements" width="600">
 </a>
+<br />
+
+| 🇵🇱 Polski | 🇬🇧 English |
+|------------|-------------|
+|Tak u siebie przylutowałem filtr do modułu KY-022 (nie miałem kondensatora 220uF więc użyłem dwóch 100uF)|This is how I soldered the filter to the KY-022 module (I didn't have a 220uF capacitor, so I used two 100uF ones)|
+<a href="images/KY-022_FRONT.jpg">
+    <img src="images/KY-022_FRONT.jpg" alt=" IR receiver KY-022" width="300">
+</a>
+<a href="images/KY-022_BACK.jpg">
+    <img src="images/KY-022_BACK.jpg" alt=" IR receiver KY-022" width="300">
+</a>
+
 
 # 🔵 Ramka do druku 3D / Frame for 3D print
 | 🇵🇱 Polski | 🇬🇧 English |
