@@ -63,7 +63,7 @@
 <a href="images/KY-022/KY-022_FRONT.jpg">
     <img src="images/KY-022/KY-022_FRONT.jpg" alt=" IR receiver KY-022" width="300">
 </a>
-<a href="images/KY-022_BACK.jpg">
+<a href="images/KY-022/KY-022_BACK.jpg">
     <img src="images/KY-022/KY-022_BACK.jpg" alt=" IR receiver KY-022" width="300">
 </a>
 
