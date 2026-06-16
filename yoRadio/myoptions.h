@@ -55,6 +55,7 @@ Supported languages: HU, PL, NL, GR, DE (UA Local/namedays/namedays_UA.h is not 
 // #define HTTP_PASS ""                   /* HTTP basic authentication password - Podstawowe hasło uwierzytelniania HTTP */
 
 /*----- LCD DISPLAY - WYŚWIETLACZ LCD -----*/
+/* -- Odkomentuj tutaj wyświetlacz którego używasz (reszta ma być zakomentowana // )  -- */
 //#define DSP_MODEL DSP_DUMMY
 //#define DSP_MODEL DSP_ST7789            /* Wyświetlacz ST7789V 2` TFT LCD 240x320 */
 //#define DSP_MODEL DSP_ST7789_76         /* Wyświetlacz ST7789 2.25` TFT LCD 76x284 */
