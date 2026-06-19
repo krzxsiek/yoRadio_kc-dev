@@ -83,11 +83,14 @@ https://makerworld.com/en/models/2924122-frame-for-lcd-nv3007-2-79-428x142-to-yo
 
 
 # 🔵 Modified by kc-dev version history
-## v0.8.8 | Mod 0.0.1 (12.06.2026)
-- Added support for NV3007 428x142 2.79" and ST7789 284x76 2.25"
+## v0.8.8 | Mod 0.0.3 (19.06.2026)
+- Fix NV3007 config (VU meter position) - Previously, you had to flip the screen to display it correctly.
+- Improved clearing of the display when stopping playback. Previously, it cleared across the entire width of the vu meter. This now prevents it from overlapping footer elements like the channel number and range icon (they no longer disappear).
 ## v0.8.8 | Mod 0.0.2 (13.06.2026)
 - Add fix for KY-022 IR Receiver module
 - Add a graphic with an example of connecting elements prepared in the Fritzing program
+## v0.8.8 | Mod 0.0.1 (12.06.2026)
+- Added support for NV3007 428x142 2.79" and ST7789 284x76 2.25"
 
 
 
