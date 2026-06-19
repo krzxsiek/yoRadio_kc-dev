@@ -20,7 +20,7 @@ const ScrollConfig title2Conf     PROGMEM = {{ TFT_FRAMEWDT, 65, 2, WA_LEFT }, 1
 const ScrollConfig playlistConf   PROGMEM = {{ TFT_FRAMEWDT, 112, 2, WA_LEFT }, 140, true, MAX_WIDTH, 1000, 4, 30 };
 const ScrollConfig apTitleConf    PROGMEM = {{ TFT_FRAMEWDT, TFT_FRAMEWDT, 3, WA_CENTER }, 140, false, MAX_WIDTH, 0, 4, 20 };
 const ScrollConfig apSettConf     PROGMEM = {{ TFT_FRAMEWDT, DSP_HEIGHT-18, 2, WA_LEFT }, 140, false, MAX_WIDTH, 0, 4, 30 };
-const ScrollConfig weatherConf    PROGMEM = {{ TFT_FRAMEWDT, 77, 2, WA_CENTER }, 140, false, MAX_WIDTH, 0, 2, 30 };
+const ScrollConfig weatherConf    PROGMEM = {{ TFT_FRAMEWDT, DSP_HEIGHT-50, 2, WA_CENTER }, 140, false, MAX_WIDTH, 0, 2, 30 };
 
 /* BACKGROUNDS  */                       /* {{ left, top, fontsize, align }, width, height, outlined } */
 //const FillConfig   metaBGConf     PROGMEM = {{ 0, 0, 0, WA_CENTER }, DSP_WIDTH, 1, false };
@@ -28,7 +28,7 @@ const FillConfig   metaBGConf     PROGMEM = {{ 0, 0,  0, WA_LEFT }, DSP_WIDTH, 2
 const FillConfig   metaBGConfInv  PROGMEM = {{ 0, 0, 0, WA_LEFT }, DSP_WIDTH, 1, false };
 const FillConfig   volbarConf     PROGMEM = {{ TFT_FRAMEWDT, DSP_HEIGHT-TFT_FRAMEWDT, 0, WA_LEFT }, MAX_WIDTH, 4, true };
 const FillConfig  playlBGConf     PROGMEM = {{ 0, 107, 0, WA_LEFT }, DSP_WIDTH, 24, false };
-const FillConfig  heapbarConf     PROGMEM = {{ 0, 239, 0, WA_LEFT }, DSP_WIDTH, 1, false };
+const FillConfig  heapbarConf     PROGMEM = {{ 0, 25, 0, WA_LEFT }, DSP_WIDTH, 1, false };
 
 /* WIDGETS  */                           /* { left, top, fontsize, align } */
 //const WidgetConfig bootstrConf    PROGMEM = { 0, 182, 1, WA_CENTER };
@@ -61,7 +61,7 @@ const WidgetConfig  vuConf        PROGMEM = { 24, 190, 1, WA_CENTER }; // center
 const VUBandsConfig bandsConf     PROGMEM = { 130, 5, 4, 2, 20, 5 }; /* { onebandwidth, onebandheight, bandsHspace, bandsVspace, numofbands, fadespeed } */
 #else
 //const WidgetConfig  vuConf        PROGMEM = { 33, 190, 1, WA_CENTER }; // center fektetett, "align" nincs használva
-const WidgetConfig  vuConf        PROGMEM = { TFT_FRAMEWDT, 204, 1, WA_CENTER }; // center fektetett, "align" nincs használva
+const WidgetConfig  vuConf        PROGMEM = { TFT_FRAMEWDT, DSP_HEIGHT-27, 1, WA_CENTER }; // center fektetett, "align" nincs használva
 const VUBandsConfig bandsConf     PROGMEM = { 200, 6, 2, 2, 30, 4 }; /* { onebandwidth, onebandheight, bandsHspace, bandsVspace, numofbands, fadespeed } */
 #endif
 /* STRINGS  */
@@ -73,8 +73,8 @@ const char        bitrateFmt[]    PROGMEM = "%d kBs";
 
 /* MOVES  */                             /* { left, top, width } */
 const MoveConfig    clockMove     PROGMEM = { 0, 176, -1 };
-const MoveConfig   weatherMove    PROGMEM = { 10, 92, MAX_WIDTH };
-const MoveConfig   weatherMoveVU  PROGMEM = { TFT_FRAMEWDT, 92, MAX_WIDTH};
+const MoveConfig   weatherMove    PROGMEM = { 10, DSP_HEIGHT-50, MAX_WIDTH };
+const MoveConfig   weatherMoveVU  PROGMEM = { TFT_FRAMEWDT, DSP_HEIGHT-50, MAX_WIDTH};
 
 #endif
 // clang-format on

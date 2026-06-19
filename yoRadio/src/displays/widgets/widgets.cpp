@@ -683,7 +683,8 @@ void VuWidget::loop() {
 
 void VuWidget::_clear() {
     #ifndef DSP_OLED
-    dsp.fillRect(0, _config.top - 4, 479, 24, _bgcolor);
+    //dsp.fillRect(0, _config.top - 4, 479, 24, _bgcolor);
+    dsp.fillRect(_config.left, _config.top - 4, _bands.width, 24, _bgcolor); /* NV3007 fix ~ kc-dev (19.06.26) */
     _labelsDrawn = false; // L és R meg keljen rajzolni. Módosítás.
     // Serial.println("widget.cpp -> VuWidget::_clear()");
     #else
