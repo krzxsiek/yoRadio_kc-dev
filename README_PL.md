@@ -71,6 +71,7 @@ https://makerworld.com/en/models/2924122-frame-for-lcd-nv3007-2-79-428x142-to-yo
 ## v0.8.8 | Mod 0.0.4 (22.06.2026)
 - Poprawka w bibliotece obsługującej NV3007 (poprawiona wysokość i odstępy podczas obrotu ekranu, ponieważ odstępy między elementami na ekranie były inne po obróceniu ekranu w opcjach)
 - Naprawiono pasek heapbar (pasek bufora) i volbar (pasek głośności) dla NV3007
+- Naprawiono animację ładowania (na ekranie startowym)
 ## v0.8.8 | Mod 0.0.3 (19.06.2026)
 - Poprawka konfiguracji NV3007 (pozycja wskaźnika VU) - Wcześniej trzeba było odwrócić ekran, aby wyświetlić go poprawnie.
 - Poprawiono czyszczenie wyświetlacza po zatrzymaniu odtwarzania. Wcześniej wskaźnik VU był czyszczony na całej szerokości. Zapobiega to teraz nakładaniu się na elementy stopki, takie jak numer kanału i ikona zasięgu wifi (już nie znikają po zatrzymaniu odtwarzania).
