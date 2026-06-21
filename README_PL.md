@@ -25,7 +25,7 @@ Dodałem obsługę następujących wyświetlaczy:
 
 ## 🔵 Informacje
 
-Dla wyświetlacza **NV3007 2.79" 428x142** przygotowano dwa pliki konfiguracyjne (dwa layouty). <br />- **(Układ 1)** w pliku `src/displays/conf/displayNV3007_142conf.h` <br />- **(Układ 2)** w pliku `src/displays/conf/displayNV3007_142conf.h.kopia` <br /><br />Aby zmienić układ wystarczy zamienić te pliki nazwami. 
+Dla wyświetlacza **NV3007 2.79" 428x142** przygotowano dwa pliki konfiguracyjne (dwa layouty). <br />- **(Układ 1)** w pliku `src/displays/conf/displayNV3007_142conf.h` <br />- **(Układ 2)** w pliku `src/displays/conf/displayNV3007_142conf.h.kopia` <br />*Aby zmienić układ wystarczy zamienić te pliki nazwami.* 
 <br /><br />Obsługa wyświetlacza **NV3007** została dodana do biblioteki **"Adafruit ST7735 and ST7789 Library WITHOUT SD"** na podstawie plików z biblioteki **"Arduino GFX"**. <br /><br /> Oprócz bibliotek i konfiguracji wyświetlacza dodano kilka usprawnień poprawiających wyświetlanie niektórych elementów interfejsu, m.in. przeniesiono adres IP na ekran głośności, aby nie zajmował miejsca na ekranie głównym. <br /><br /> Dodano również możliwość wymuszenia własnej nazwy stacji poprzez dodanie przecinka przed nazwą, np. `,MOJA STACJA`. Jest to przydatne dla stacji, które wysyłają nieprawidłowe dane w metatagach. <br /><br />
 
 
@@ -37,7 +37,7 @@ Dla wyświetlacza **NV3007 2.79" 428x142** przygotowano dwa pliki konfiguracyjne
 </a>
 
 ## 🔹2. Instalacja bibliotek
-Przenieś foldery bibliotek ręcznie z <br />`yoRadio/.pio/libdeps/esp32-s3-devkitc1-n16r8` <br /><a href="Arduino IDE 2.3.10 settings/libraries_pio.png"><img src="Arduino IDE 2.3.10 settings/libraries_pio.png" alt="Libraries" width="300"></a> <br />do `C:\Users\user\Documents\Arduino\libraries` <a href="Arduino IDE 2.3.10 settings/libraries_arduino.png"><img src="Arduino IDE 2.3.10 settings/libraries_arduino.png" alt="Libraries" width="300"></a>
+Przenieś foldery bibliotek ręcznie z <br />`yoRadio/.pio/libdeps/esp32-s3-devkitc1-n16r8` <br /><a href="Arduino IDE 2.3.10 settings/libraries_pio.png"><img src="Arduino IDE 2.3.10 settings/libraries_pio.png" alt="Libraries" width="300"></a> <br />do `C:\Users\user\Documents\Arduino\libraries` <br /><a href="Arduino IDE 2.3.10 settings/libraries_arduino.png"><img src="Arduino IDE 2.3.10 settings/libraries_arduino.png" alt="Libraries" width="300"></a>
 
 # 🔵 Przykładowe podłączenie elementów
 Przykładowe podłączenie elementów według mojego pliku `myoptions.h` zastosowanym przy jednym z moich projektów. <br/><br/>Wyświetlacz NV3007 (428x142) i ST7789 (284x76) działają przy identycznym podłączeniu pinów. <br/>Różnica jest tylko na pinie BLK jeśli chodzi o obsługę podświetlenia ponieważ działa na odwrót (tzn. ściemnianie i rozjaśnianie w przypadku ST7789 działa na odwróconej zasadzie) <br/><br/>Przy podłączeniu odbiornika IR (KY-022 lub podobnych) polecam wlutować na płytce (jak najbliżej diody IR) kondensatory: 220uF (elektrolityczny), 100nF (ceramiczny) aby odczyty z pilota nie wariowały przez zakłócenia. <br/>⚠️ **Uwaga! Pamiętaj o poprawnym ustawieniu polaryzaji +/- kondensatora elektrolitycznego!** <br/><br/> Moduł DAC GY-PCM5102 zaraz po zakupie wymaga zlutowania zworek (<a href="PCM5102A/jumpers.png">przykład tutaj</a>)
