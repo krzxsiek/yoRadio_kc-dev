@@ -1,6 +1,5 @@
 # yoRadio V-Tom (Modded by kc-dev)
 [![en](images/english.svg)](README.md)
-[![pl](images/polish.svg)](README_PL.md)
 
 Dodałem obsługę następujących wyświetlaczy:
 

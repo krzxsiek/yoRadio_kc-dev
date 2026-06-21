@@ -2,7 +2,7 @@
 [![en](images/english.svg)](README.md)
 [![pl](images/polish.svg)](README_PL.md)
 
-I've added support for the following displays: |
+I've added support for the following displays:
 
 - NV3007 428x142 2.79" https://pl.aliexpress.com/item/1005012251243789.html
 - ST7789 284x76 2.25" https://aliexpress.com/item/1005009016973081.html
