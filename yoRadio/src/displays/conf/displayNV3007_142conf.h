@@ -47,7 +47,7 @@ const WidgetConfig apName2Conf    PROGMEM = { 0, 56, 2, WA_CENTER };
 const WidgetConfig apPassConf     PROGMEM = { 0, 83, 2, WA_CENTER };
 const WidgetConfig apPass2Conf    PROGMEM = { 0, 103, 2, WA_CENTER };
 const WidgetConfig clockConf      PROGMEM = { TFT_FRAMEWDT, 82, 1, WA_RIGHT };
-const WidgetConfig bootWdtConf    PROGMEM = { 0, 162, 1, WA_CENTER };
+const WidgetConfig bootWdtConf    PROGMEM = { 0, DSP_HEIGHT-30, 1, WA_CENTER };
 const WidgetConfig namedayConf    PROGMEM = { TFT_FRAMEWDT, 239, 1, WA_LEFT }; // Módosítás új sor "nameday"
 const WidgetConfig dateConf       PROGMEM = { TFT_FRAMEWDT *2, 269, 1, WA_LEFT }; // Módosítás új sor "date"
 
