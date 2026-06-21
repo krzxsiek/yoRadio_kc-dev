@@ -1,8 +1,8 @@
 # yoRadio V-Tom (Modded by kc-dev)
+[![en](images/english.svg)](README.md)
+[![pl](images/polish.svg)](README_PL.md)
 
-| 🇵🇱 Polski | 🇬🇧 English |
-|------------|-------------|
-| Dodałem obsługę następujących wyświetlaczy: | I've added support for the following displays: |
+I've added support for the following displays: |
 
 - NV3007 428x142 2.79" https://pl.aliexpress.com/item/1005012251243789.html
 - ST7789 284x76 2.25" https://aliexpress.com/item/1005009016973081.html
@@ -24,42 +24,29 @@
 </a>
 
 
-## 🔵 Informacje / Information
+## 🔵 Informations
 
-| 🇵🇱 Polski | 🇬🇧 English |
-|------------|-------------|
-| Dla wyświetlacza **NV3007 2.79" 428x142** przygotowano dwa pliki konfiguracyjne (dwa layouty). <br />- **(Układ 1)** w pliku `src/displays/conf/displayNV3007_142conf.h` <br />- **(Układ 2)** w pliku `src/displays/conf/displayNV3007_142conf.h.kopia` <br /><br />Aby zmienić układ wystarczy zamienić te pliki nazwami. | Two configuration files (two layouts) have been prepared for the NV3007 2.79" 428x142 display.<br />- **(Layout 1)** in the `src/displays/conf/displayNV3007_142conf.h` file <br />- **(Layout 2)** in the `src/displays/conf/displayNV3007_142conf.h.copy` file <br /><br />To change the layout, simply swap the file names. <br /><br /> | 
-<br /><br />Obsługa wyświetlacza **NV3007** została dodana do biblioteki **"Adafruit ST7735 and ST7789 Library WITHOUT SD"** na podstawie plików z biblioteki **"Arduino GFX"**. <br /><br /> Oprócz bibliotek i konfiguracji wyświetlacza dodano kilka usprawnień poprawiających wyświetlanie niektórych elementów interfejsu, m.in. przeniesiono adres IP na ekran głośności, aby nie zajmował miejsca na ekranie głównym. <br /><br /> Dodano również możliwość wymuszenia własnej nazwy stacji poprzez dodanie przecinka przed nazwą, np. `,MOJA STACJA`. Jest to przydatne dla stacji, które wysyłają nieprawidłowe dane w metatagach. <br /><br /> | Support for the **NV3007** display has been added to the **"Adafruit ST7735 and ST7789 Library WITHOUT SD"** library based on files from the **"Arduino GFX"** library. <br /><br /> In addition to the display libraries and configuration files, several improvements have been made to enhance the display of certain interface elements, including moving the IP address to the volume screen to avoid cluttering the main screen. <br /><br />I also added the ability to force a custom station name by adding a comma before the station name, e.g. `,MY STATION`. This is useful for stations that provide incorrect metadata tags. <br /><br /> |
+Two configuration files (two layouts) have been prepared for the NV3007 2.79" 428x142 display.<br />- **(Layout 1)** in the `src/displays/conf/displayNV3007_142conf.h` file <br />- **(Layout 2)** in the `src/displays/conf/displayNV3007_142conf.h.copy` file <br /><br />To change the layout, simply swap the file names. <br /><br /> Support for the **NV3007** display has been added to the **"Adafruit ST7735 and ST7789 Library WITHOUT SD"** library based on files from the **"Arduino GFX"** library. <br /><br /> In addition to the display libraries and configuration files, several improvements have been made to enhance the display of certain interface elements, including moving the IP address to the volume screen to avoid cluttering the main screen. <br /><br />I also added the ability to force a custom station name by adding a comma before the station name, e.g. `,MY STATION`. This is useful for stations that provide incorrect metadata tags. <br /><br />
 
 
-# 🔵 Instrukcje dla Arduino IDE (testowałem na wersji 2.3.10) / Instructions for Arduino IDE (tested on version 2.3.10)
-## 🔹1. Ustawienia ArduinoIDE / Arduino IDE Settings
-
-<a href="Arduino IDE 2.3.10 settings/PL_ArduinoIDE_USTAWIENIA.png">
-    <img src="Arduino IDE 2.3.10 settings/PL_ArduinoIDE_USTAWIENIA.png" alt="Arduino IDE 2.3.10 Settings (PL)" width="300">
-</a>
+# 🔵 Instructions for Arduino IDE (tested on version 2.3.10)
+## 🔹1. Arduino IDE Settings
 
 <a href="Arduino IDE 2.3.10 settings/EN_ArduinoIDE_SETTINGS.png">
     <img src="Arduino IDE 2.3.10 settings/EN_ArduinoIDE_SETTINGS.png" alt="Arduino IDE 2.3.10 Settings (EN)" width="300">
 </a>
 
-## 🔹2. Instalacja bibliotek / Library Installation
-| 🇵🇱 Polski | 🇬🇧 English |
-|------------|-------------|
-| Przenieś foldery bibliotek ręcznie z <br />`yoRadio/.pio/libdeps/esp32-s3-devkitc1-n16r8` <br /><a href="Arduino IDE 2.3.10 settings/libraries_pio.png"><img src="Arduino IDE 2.3.10 settings/libraries_pio.png" alt="Libraries" width="300"></a> <br />do `C:\Users\user\Documents\Arduino\libraries` <a href="Arduino IDE 2.3.10 settings/libraries_arduino.png"><img src="Arduino IDE 2.3.10 settings/libraries_arduino.png" alt="Libraries" width="300"></a> | Move library folders manually from <br />`yoRadio/.pio/libdeps/esp32-s3-devkitc1-n16r8` <br /><a href="Arduino IDE 2.3.10 settings/libraries_pio.png"><img src="Arduino IDE 2.3.10 settings/libraries_pio.png" alt="Libraries" width="300"></a> <br />to `C:\Users\user\Documents\Arduino\libraries` <a href="Arduino IDE 2.3.10 settings/libraries_arduino.png"><img src="Arduino IDE 2.3.10 settings/libraries_arduino.png" alt="Libraries" width="300"></a> |
+## 🔹2. Library Installation
+Move library folders manually from <br />`yoRadio/.pio/libdeps/esp32-s3-devkitc1-n16r8` <br /><a href="Arduino IDE 2.3.10 settings/libraries_pio.png"><img src="Arduino IDE 2.3.10 settings/libraries_pio.png" alt="Libraries" width="300"></a> <br />to `C:\Users\user\Documents\Arduino\libraries` <a href="Arduino IDE 2.3.10 settings/libraries_arduino.png"><img src="Arduino IDE 2.3.10 settings/libraries_arduino.png" alt="Libraries" width="300"></a>
 
-# 🔵 Przykładowe podłączenie elementów / Example connection of elements
-| 🇵🇱 Polski | 🇬🇧 English |
-|------------|-------------|
-|Przykładowe podłączenie elementów według mojego pliku `myoptions.h` zastosowanym przy jednym z moich projektów. <br/><br/>Wyświetlacz NV3007 (428x142) i ST7789 (284x76) działają przy identycznym podłączeniu pinów. <br/>Różnica jest tylko na pinie BLK jeśli chodzi o obsługę podświetlenia ponieważ działa na odwrót (tzn. ściemnianie i rozjaśnianie w przypadku ST7789 działa na odwróconej zasadzie) <br/><br/>Przy podłączeniu odbiornika IR (KY-022 lub podobnych) polecam wlutować na płytce (jak najbliżej diody IR) kondensatory: 220uF (elektrolityczny), 100nF (ceramiczny) aby odczyty z pilota nie wariowały przez zakłócenia. <br/>⚠️ **Uwaga! Pamiętaj o poprawnym ustawieniu polaryzaji +/- kondensatora elektrolitycznego!** <br/><br/> Moduł DAC GY-PCM5102 zaraz po zakupie wymaga zlutowania zworek (<a href="PCM5102A/jumpers.png">przykład tutaj</a>)|Example connection of elements according to my `myoptions.h` file used in one of my projects. <br /><br/>The NV3007 (428x142) and ST7789 (284x76) displays operate with identical pin connections. <br/>The only difference is the BLK pin, which handles the backlight in reverse (i.e., dimming and brightening on the ST7789 works in reverse). <br /><br/>When connecting an IR receiver (KY-022 or similar), I recommend soldering capacitors on the board (as close to the IR diode as possible): 220uF (electrolytic), 100nF (ceramic) so that the readings from the remote control do not fluctuate due to interference. <br/>⚠️ **Attention! Remember to set the correct +/- polarity of the electrolytic capacitor!** <br/><br/> The DAC GY-PCM5102 module requires soldering the jumpers immediately after purchase (<a href="PCM5102A/jumpers.png">example here</a>)|
+# 🔵 Example connection of elements
+Example connection of elements according to my `myoptions.h` file used in one of my projects. <br /><br/>The NV3007 (428x142) and ST7789 (284x76) displays operate with identical pin connections. <br/>The only difference is the BLK pin, which handles the backlight in reverse (i.e., dimming and brightening on the ST7789 works in reverse). <br /><br/>When connecting an IR receiver (KY-022 or similar), I recommend soldering capacitors on the board (as close to the IR diode as possible): 220uF (electrolytic), 100nF (ceramic) so that the readings from the remote control do not fluctuate due to interference. <br/>⚠️ **Attention! Remember to set the correct +/- polarity of the electrolytic capacitor!** <br/><br/> The DAC GY-PCM5102 module requires soldering the jumpers immediately after purchase (<a href="PCM5102A/jumpers.png">example here</a>)
 <a href="PCB/yoRadio ESP32-S3-WROOM-1-N16R8-NV3007_ST7789_76_bb.png">
     <img src="PCB/yoRadio ESP32-S3-WROOM-1-N16R8-NV3007_ST7789_76_bb.png" alt="Example connection of elements" width="600">
 </a>
 <br />
 
-| 🇵🇱 Polski | 🇬🇧 English |
-|------------|-------------|
-|Tak u siebie przylutowałem filtr do modułu KY-022 (nie miałem kondensatora 220uF więc użyłem dwóch 100uF)|This is how I soldered the filter to the KY-022 module (I didn't have a 220uF capacitor, so I used two 100uF ones)|
+This is how I soldered the filter to the KY-022 module (I didn't have a 220uF capacitor, so I used two 100uF ones)
 <a href="images/KY-022/KY-022_FRONT.jpg">
     <img src="images/KY-022/KY-022_FRONT.jpg" alt=" IR receiver KY-022" width="300">
 </a>
@@ -68,10 +55,8 @@
 </a>
 
 
-# 🔵 Ramka do druku 3D / Frame for 3D print
-| 🇵🇱 Polski | 🇬🇧 English |
-|------------|-------------|
-|Gotowa ramka na wyświetlacz, do użycia przy projektowaniu obudowy do druku 3D. <br/>W dwóch plikach STL: <a href="3D/Frame.stl">Frame.stl</a>, <a href="3D/Frame-clip.stl">Frame-clip.stl</a>|A ready-made display frame for use when designing a 3D printable enclosure.  <br/>In two STL files: <a href="3D/Frame.stl">Frame.stl</a>, <a href="3D/Frame-clip.stl">Frame-clip.stl</a>|
+# 🔵 Frame for 3D print
+A ready-made display frame for use when designing a 3D printable enclosure.  <br/>In two STL files: <a href="3D/Frame.stl">Frame.stl</a>, <a href="3D/Frame-clip.stl">Frame-clip.stl</a>
 
 https://makerworld.com/en/models/2924122-frame-for-lcd-nv3007-2-79-428x142-to-yoradio<br/><br/>
 <a href="3D/frame1.jpg">
@@ -83,6 +68,9 @@ https://makerworld.com/en/models/2924122-frame-for-lcd-nv3007-2-79-428x142-to-yo
 
 
 # 🔵 Modified by kc-dev version history
+## v0.8.8 | Mod 0.0.4 (22.06.2026)
+- Fix in the NV3007 support library (improved height and spacing when the screen was rotated because the spacing of elements on the screen was different when rotated)
+- Fixed heapbar and volbar for NV3007
 ## v0.8.8 | Mod 0.0.3 (19.06.2026)
 - Fix NV3007 config (VU meter position) - Previously, you had to flip the screen to display it correctly.
 - Improved clearing of the display when stopping playback. Previously, it cleared across the entire width of the vu meter. This now prevents it from overlapping footer elements like the channel number and range icon (they no longer disappear).

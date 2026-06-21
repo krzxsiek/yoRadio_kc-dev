@@ -14,7 +14,7 @@
 
 
 /* SROLLS  */                            /* {{ left, top, fontsize, align }, buffsize, uppercase, width, scrolldelay, scrolldelta, scrolltime } */
-const ScrollConfig metaConf       PROGMEM = {{ TFT_FRAMEWDT, TFT_FRAMEWDT+1, 3, WA_LEFT }, 140, true, MAX_WIDTH, 5000, 5, 30 };
+const ScrollConfig metaConf       PROGMEM = {{ TFT_FRAMEWDT, TFT_FRAMEWDT, 3, WA_LEFT }, 140, true, MAX_WIDTH, 5000, 5, 30 };
 const ScrollConfig title1Conf     PROGMEM = {{ TFT_FRAMEWDT, 43, 2, WA_LEFT }, 140, true, MAX_WIDTH-165, 5000, 4, 30 };
 const ScrollConfig title2Conf     PROGMEM = {{ TFT_FRAMEWDT, 65, 2, WA_LEFT }, 140, true, MAX_WIDTH-165, 5000, 4, 30 };
 const ScrollConfig playlistConf   PROGMEM = {{ TFT_FRAMEWDT, 112, 2, WA_LEFT }, 140, true, MAX_WIDTH, 1000, 4, 30 };
@@ -26,9 +26,9 @@ const ScrollConfig weatherConf    PROGMEM = {{ TFT_FRAMEWDT, DSP_HEIGHT-50, 2, W
 //const FillConfig   metaBGConf     PROGMEM = {{ 0, 0, 0, WA_CENTER }, DSP_WIDTH, 1, false };
 const FillConfig   metaBGConf     PROGMEM = {{ 0, 0,  0, WA_LEFT }, DSP_WIDTH, 29, false };
 const FillConfig   metaBGConfInv  PROGMEM = {{ 0, 0, 0, WA_LEFT }, DSP_WIDTH, 1, false };
-const FillConfig   volbarConf     PROGMEM = {{ TFT_FRAMEWDT, DSP_HEIGHT-TFT_FRAMEWDT-2, 0, WA_LEFT }, MAX_WIDTH, 4, true };
+const FillConfig   volbarConf     PROGMEM = {{ TFT_FRAMEWDT, DSP_HEIGHT-TFT_FRAMEWDT-3, 0, WA_LEFT }, MAX_WIDTH, 4, true };
 const FillConfig  playlBGConf     PROGMEM = {{ 0, 107, 0, WA_LEFT }, DSP_WIDTH, 24, false };
-const FillConfig  heapbarConf     PROGMEM = {{ TFT_FRAMEWDT, DSP_HEIGHT-1, 0, WA_LEFT }, MAX_WIDTH, 2, false };
+const FillConfig  heapbarConf     PROGMEM = {{ TFT_FRAMEWDT, DSP_HEIGHT-2, 0, WA_LEFT }, MAX_WIDTH, 2, false };
 
 /* WIDGETS  */                           /* { left, top, fontsize, align } */
 //const WidgetConfig bootstrConf    PROGMEM = { 0, 182, 1, WA_CENTER };
