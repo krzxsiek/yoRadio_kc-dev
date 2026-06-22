@@ -68,6 +68,8 @@ https://makerworld.com/en/models/2924122-frame-for-lcd-nv3007-2-79-428x142-to-yo
 
 
 # 🔵 Historia zmian modyfikacji kc-dev
+## v0.8.8 | Mod 0.0.5 (22.06.2026)
+- Poprawka usuwająca przecinek z początku nazwy stacji (na liście stacji gdy korzystamy z modyfikacji umożliwiającej ustawienie stałej nazwy stacji)
 ## v0.8.8 | Mod 0.0.4 (22.06.2026)
 - Poprawka w bibliotece obsługującej NV3007 (poprawiona wysokość i odstępy podczas obrotu ekranu, ponieważ odstępy między elementami na ekranie były inne po obróceniu ekranu w opcjach)
 - Naprawiono pasek heapbar (pasek bufora) i volbar (pasek głośności) dla NV3007

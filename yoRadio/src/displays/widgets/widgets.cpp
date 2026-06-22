@@ -1473,6 +1473,13 @@ void _loadPlaylistPage(int pageIndex, int itemsPerPage, int totalItems) {
         if (tabIdx > 0) line = line.substring(0, tabIdx);
         line.trim();
 
+        /* Blokada zmiany nazwy stacji (, w playlist) - Blocking the renaming of stations (, in playlist) - FIX ~ kc-dev (22.06.26) START */
+        if (line.startsWith(",")) {
+            line.remove(0, 1);
+            line.trim();
+        }
+        /* Blokada zmiany nazwy stacji (, w playlist) - Blocking the renaming of stations (, in playlist) - FIX ~ kc-dev (22.06.26) END */
+
         if (config.store.numplaylist && line.length() > 0) {
             _plCache[i] = String(currentGlobalIdx + 1) + " " + line;
         } else {
@@ -1568,6 +1575,12 @@ uint8_t PlayListWidget::_fillPlMenu(int from, uint8_t count) {
             pla = playlist.available();
             String stationName = playlist.readStringUntil('\n');
             stationName = stationName.substring(0, stationName.indexOf('\t'));
+            /* Blokada zmiany nazwy stacji (, w playlist) - Blocking the renaming of stations (, in playlist) - FIX ~ kc-dev (22.06.26) START */
+            if (stationName.startsWith(",")) {
+                stationName.remove(0, 1);
+                stationName.trim();
+            }
+            /* Blokada zmiany nazwy stacji (, w playlist) - Blocking the renaming of stations (, in playlist) - FIX ~ kc-dev (22.06.26) END */
             if (config.store.numplaylist && stationName.length() > 0) { stationName = String(from + c) + " " + stationName; }
             _printPLitem(c, stationName.c_str());
             c++;

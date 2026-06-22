@@ -68,6 +68,8 @@ https://makerworld.com/en/models/2924122-frame-for-lcd-nv3007-2-79-428x142-to-yo
 
 
 # 🔵 Modified by kc-dev version history
+## v0.8.8 | Mod 0.0.5 (22.06.2026)
+- Fix removing the comma from the beginning of the station name (in the station list when using the modification that allows setting a fixed station name)
 ## v0.8.8 | Mod 0.0.4 (22.06.2026)
 - Fix in the NV3007 support library (improved height and spacing when the screen was rotated because the spacing of elements on the screen was different when rotated)
 - Fixed heapbar and volbar for NV3007
