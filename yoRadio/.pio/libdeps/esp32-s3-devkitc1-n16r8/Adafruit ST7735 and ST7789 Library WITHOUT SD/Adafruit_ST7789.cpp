@@ -153,7 +153,7 @@ void Adafruit_ST7789::setRotation(uint8_t m) {
         madctl = ST77XX_MADCTL_RGB;
         _xstart = 12;
         _ystart = 0;
-        _width = 168;
+        _width = 142;
         _height = 428;
         break;
 
@@ -166,7 +166,7 @@ void Adafruit_ST7789::setRotation(uint8_t m) {
         _ystart = 12;
 
         _width = 428;
-        _height = 168;
+        _height = 142;
         break;
 
       case 2:
@@ -177,7 +177,7 @@ void Adafruit_ST7789::setRotation(uint8_t m) {
         _xstart = 12;
         _ystart = 0;
 
-        _width = 168;
+        _width = 142;
         _height = 428;
         break;
 
@@ -190,7 +190,7 @@ void Adafruit_ST7789::setRotation(uint8_t m) {
         _ystart = 14;
 
         _width = 428;
-        _height = 168;
+        _height = 142;
         break;
     }
 
