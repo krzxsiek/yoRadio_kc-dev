@@ -73,10 +73,7 @@ https://makerworld.com/en/models/2924122-frame-for-lcd-nv3007-2-79-428x142-to-yo
 
 # 🔵 Historia zmian modyfikacji kc-dev
 ## v0.8.8 | Mod 0.0.6 (24.06.2026)
-- ST7789_76:
-    - <a href="images/ST7789_76 v0.8.8 Mod 0.0.6 (24.06.2026).png">
-        <img src="images/ST7789_76 v0.8.8 Mod 0.0.6 (24.06.2026).png" width="300" alt="ST7789 284x76 2.25&quot; ## v0.8.8 | Mod 0.0.6 (24.06.2026)">
-    </a> 
+- ST7789_76:<br/><a href="images/ST7789_76 v0.8.8 Mod 0.0.6 (24.06.2026).png"><img src="images/ST7789_76 v0.8.8 Mod 0.0.6 (24.06.2026).png" width="300" alt="ST7789 284x76 2.25&quot; ## v0.8.8 | Mod 0.0.6 (24.06.2026)"></a>
     - Dodałem do ekranu widget imienin zastępujący adres IP (gdy włączymy imieniny w opcjach "TOOLS / Nameday", adres IP trafi na ekran głośności), jeśli nie włączymy imienin to dalej będzie wyświetlany adres IP w dotychczasowym miejscu. 
     - Dodałem heapbar pod vu metrem wyświetlający poziom bufora (włączamy opcją "SYSTEM / Audio Info")
     - Naprawiono animację ładowania (na ekranie startowym)
