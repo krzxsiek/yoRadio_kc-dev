@@ -23,6 +23,9 @@ I've added support for the following displays:
     <img src="https://img.youtube.com/vi/pyjyYVzSvXk/maxresdefault.jpg" width="400" alt="ST7789 284x76 2.25&quot;">
 </a>
 
+<a href="images/ST7789_76 v0.8.8 Mod 0.0.6 (24.06.2026).png">
+    <img src="images/ST7789_76 v0.8.8 Mod 0.0.6 (24.06.2026).png" width="400" alt="ST7789 284x76 2.25&quot; ## v0.8.8 | Mod 0.0.6 (24.06.2026)">
+</a>
 
 ## 🔵 Informations
 
@@ -68,12 +71,21 @@ https://makerworld.com/en/models/2924122-frame-for-lcd-nv3007-2-79-428x142-to-yo
 
 
 # 🔵 Modified by kc-dev version history
+## v0.8.8 | Mod 0.0.6 (24.06.2026)
+- ST7789_76:
+    - <a href="images/ST7789_76 v0.8.8 Mod 0.0.6 (24.06.2026).png">
+        <img src="images/ST7789_76 v0.8.8 Mod 0.0.6 (24.06.2026).png" width="300" alt="ST7789 284x76 2.25&quot; ## v0.8.8 | Mod 0.0.6 (24.06.2026)">
+    </a> 
+    - Added a nameday widget to the screen that replaces the IP address (when nameday is enabled in the "TOOLS / Nameday" options, the IP address will be displayed on the volume screen). If nameday is not enabled, the IP address will continue to be displayed in its current location.
+    - Added a heapbar under the VU meter that displays the buffer level (enabled via the "SYSTEM / Audio Info" option).
+    - Fixed the loading animation (on the home screen).
 ## v0.8.8 | Mod 0.0.5 (22.06.2026)
 - Fix removing the comma from the beginning of the station name (in the station list when using the modification that allows setting a fixed station name)
 ## v0.8.8 | Mod 0.0.4 (22.06.2026)
 - Fix in the NV3007 support library (improved height and spacing when the screen was rotated because the spacing of elements on the screen was different when rotated)
-- Fixed heapbar and volbar for NV3007
-- Fix loading animation (on boot screen)
+- NV3007: 
+    - Fixed heapbar and volbar for NV3007
+    - Fix loading animation (on boot screen)
 ## v0.8.8 | Mod 0.0.3 (19.06.2026)
 - Fix NV3007 config (VU meter position) - Previously, you had to flip the screen to display it correctly.
 - Improved clearing of the display when stopping playback. Previously, it cleared across the entire width of the vu meter. This now prevents it from overlapping footer elements like the channel number and range icon (they no longer disappear).

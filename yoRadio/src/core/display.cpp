@@ -201,9 +201,21 @@ void Display::_buildPager() {
     if (_volbar) { _footer->addWidget(_volbar); }
     #endif
     if (_voltxt) { _footer->addWidget(_voltxt); }
+
     #ifndef HIDE_IP_ONLY_MAIN_SCREEN
-    if (_volip) { _footer->addWidget(_volip); }
+
+        #if DSP_MODEL == DSP_ST7789_76
+            if (_volip && !config.store.nameday) {
+                _footer->addWidget(_volip);
+            }
+        #else
+            if (_volip) {
+                _footer->addWidget(_volip);
+            }
+        #endif
+
     #endif
+    
     if (_rssi) { _footer->addWidget(_rssi); }
     if (_heapbar) { _footer->addWidget(_heapbar); }
     if (_chtxt) {
@@ -232,9 +244,17 @@ void Display::_buildPager() {
     #ifndef HIDE_VOL_FOOTER
     pages[PG_DIALOG]->addPage(_footer);
     #else
-        if (_volbar) { 
-            #ifdef HIDE_IP_ONLY_MAIN_SCREEN
-            pages[PG_DIALOG]->addWidget(_volip);
+        if (_volbar) {
+            #ifndef HIDE_VOL_IP
+                #ifdef HIDE_IP_ONLY_MAIN_SCREEN
+                pages[PG_DIALOG]->addWidget(_volip);
+                #else
+                    #if DSP_MODEL == DSP_ST7789_76
+                        if (config.store.nameday) {
+                            pages[PG_DIALOG]->addWidget(_volip);
+                        }
+                    #endif
+                #endif
             #endif
             pages[PG_DIALOG]->addWidget(_volbar);
         }

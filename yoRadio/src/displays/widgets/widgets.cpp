@@ -1199,34 +1199,65 @@ void ClockWidget::getNamedayUpper(char* dest, size_t len) { // commongfx.h - ban
 }
 
 void ClockWidget::_printNameday() {
+    #if (DSP_MODEL != DSP_ST7789_76)
     uint16_t nameday_top;
+    #endif
     memcpy_P(&_namedayConf, &namedayConf, sizeof(WidgetConfig));
         #if DSP_MODEL == DSP_ILI9341
     nameday_top = _namedayConf.top + 14;
         #else
+            #if (DSP_MODEL != DSP_ST7789_76)
     nameday_top = _namedayConf.top + 22;
+            #endif
         #endif
     if (config.store.nameday) {
         // Rajzold le a nyelvfüggő "Névnap:" szót fehér színnel.
-        dsp.setTextColor(config.theme.date, config.theme.background);
-        dsp.setCursor(_namedayConf.left, _namedayConf.top); // egy sorral feljebb
-        #if NAMEDAYS_FILE == GR                             // Görög nyevnél túl hosszú, ezért 1- es méret.
-        dsp.setTextSize(1);
-        #else
-        dsp.setTextSize(_namedayConf.textsize);
+        #if (DSP_MODEL != DSP_ST7789_76)
+            dsp.setTextColor(config.theme.date, config.theme.background);
+            dsp.setCursor(_namedayConf.left, _namedayConf.top); // egy sorral feljebb
+            #if NAMEDAYS_FILE == GR                             // Görög nyevnél túl hosszú, ezért 1- es méret.
+            dsp.setTextSize(1);
+            #else
+            dsp.setTextSize(_namedayConf.textsize);
+            #endif
         #endif
         if (!config.isScreensaver) {
             // Serial.printf("Widget.cpp->nameday_label: %s \n", nameday_label);
             // Serial.printf("Widget.cpp->utf8To(nameday_label, false): %s \n", utf8To(nameday_label, false));
+            #if (DSP_MODEL != DSP_ST7789_76)
             dsp.print(utf8To(nameday_label, false)); // <<< Itt már a headerből jön "nameday"
+            #endif
             // Csak a neveket rajzolja arany színnel
             dsp.setTextColor(config.theme.nameday, config.theme.background); // szürke 0x8410
             // Névnap nevének területének törlése a kijelzőről.
+            #if (DSP_MODEL != DSP_ST7789_76)
             int clearWidth = max(_oldnamedaywidth, _namedaywidth); // A régi és az új név közül a szélesebb szélessége.
             dsp.fillRect(_namedayConf.left, nameday_top, clearWidth, CHARHEIGHT * _namedayConf.textsize, config.theme.background);
             dsp.setCursor(_namedayConf.left, nameday_top);
             dsp.setTextSize(_namedayConf.textsize);
             dsp.print(_namedayBuf);
+            #else
+            
+            // wyczyść całą linię imienin
+            dsp.fillRect(
+                _namedayConf.left, 
+                _namedayConf.top, 
+                160,   // szerokość obszaru imienin
+                //dsp.width() - _namedayConf.left, 
+                CHARHEIGHT * _namedayConf.textsize, 
+                config.theme.background
+            );
+            
+            dsp.setCursor(_namedayConf.left, _namedayConf.top);
+            dsp.setTextColor(config.theme.date, config.theme.background);
+            dsp.print(utf8To(nameday_label, false));
+
+            int xpos = dsp.getCursorX();
+
+            dsp.setTextColor(config.theme.nameday, config.theme.background);
+            dsp.setCursor(xpos + 4, _namedayConf.top);
+            dsp.print(_namedayBuf);
+            #endif
             strlcpy(_oldNamedayBuf, _namedayBuf, sizeof(_namedayBuf));
             _oldnamedaywidth = _namedaywidth;
         }

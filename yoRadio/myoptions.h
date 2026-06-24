@@ -42,7 +42,7 @@
 
 /* Display name days - Pokaż imieniny
 Supported languages: HU, PL, NL, GR, DE (UA Local/namedays/namedays_UA.h is not filled in.) */
-//#define NAMEDAYS_FILE PL // << Uncomment if you use Polish (or other) language and screen (configuration layout) with name day display - Odkomentuj jeśli używasz języka polskiego (lub innego) i ekranu (układu konfiguracji) z wyświetlaniem imienin
+#define NAMEDAYS_FILE PL // << Uncomment if you use Polish (or other) language and screen (configuration layout) with name day display - Odkomentuj jeśli używasz języka polskiego (lub innego) i ekranu (układu konfiguracji) z wyświetlaniem imienin
 
 #define USE_BUILTIN_LED false /* The RGB LED does not turn on.. - Dioda LED RGB nie włączy się. */
 
@@ -75,7 +75,7 @@ Supported languages: HU, PL, NL, GR, DE (UA Local/namedays/namedays_UA.h is not 
 /*
    GPIO 11 - MOSI    może być SDA, DIN, SDI
    GPIO 12 - CLK     może być SCLK, SCL, SCK, CLK
-   GPIO 13 - MISO  // Nie podłączać do wyświetlacza LCD!!! - Do not connect to the LCD display!!! 
+   GPIO 13 - MISO  // Do not connect to the LCD display!!! - Nie podłączać do wyświetlacza LCD!!!
 */
 
 /*----- Touch ISP -----*/
@@ -113,7 +113,7 @@ Supported languages: HU, PL, NL, GR, DE (UA Local/namedays/namedays_UA.h is not 
 
 /*----- ENCODER 2 - POKRĘTŁO 2 ------*/ // BC11 lub KY-040
 #define ENC2_BTNR 47  // S2    lub   DT
-#define ENC2_BTNL 48  // S1    lub   CLK
+#define ENC2_BTNL 48  // S1    lub   CLK  (Check if it is not connected to the RGB LED, then you need to select a different PIN, e.g. 38 - Sprawdź czy nie jest podłączony do diody RGB, wtedy musisz wybrać inny PIN np. 38)
 #define ENC2_BTNB 21  // KEY   lub   SW
 // #define ENC2_INTERNALPULLUP   true
 

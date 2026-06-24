@@ -22,6 +22,10 @@ Dodałem obsługę następujących wyświetlaczy:
     <img src="https://img.youtube.com/vi/pyjyYVzSvXk/maxresdefault.jpg" width="400" alt="ST7789 284x76 2.25&quot;">
 </a>
 
+<a href="images/ST7789_76 v0.8.8 Mod 0.0.6 (24.06.2026).png">
+    <img src="images/ST7789_76 v0.8.8 Mod 0.0.6 (24.06.2026).png" width="400" alt="ST7789 284x76 2.25&quot; ## v0.8.8 | Mod 0.0.6 (24.06.2026)">
+</a>
+
 
 ## 🔵 Informacje
 
@@ -68,12 +72,21 @@ https://makerworld.com/en/models/2924122-frame-for-lcd-nv3007-2-79-428x142-to-yo
 
 
 # 🔵 Historia zmian modyfikacji kc-dev
+## v0.8.8 | Mod 0.0.6 (24.06.2026)
+- ST7789_76:
+    - <a href="images/ST7789_76 v0.8.8 Mod 0.0.6 (24.06.2026).png">
+        <img src="images/ST7789_76 v0.8.8 Mod 0.0.6 (24.06.2026).png" width="300" alt="ST7789 284x76 2.25&quot; ## v0.8.8 | Mod 0.0.6 (24.06.2026)">
+    </a> 
+    - Dodałem do ekranu widget imienin zastępujący adres IP (gdy włączymy imieniny w opcjach "TOOLS / Nameday", adres IP trafi na ekran głośności), jeśli nie włączymy imienin to dalej będzie wyświetlany adres IP w dotychczasowym miejscu. 
+    - Dodałem heapbar pod vu metrem wyświetlający poziom bufora (włączamy opcją "SYSTEM / Audio Info")
+    - Naprawiono animację ładowania (na ekranie startowym)
 ## v0.8.8 | Mod 0.0.5 (22.06.2026)
 - Poprawka usuwająca przecinek z początku nazwy stacji (na liście stacji gdy korzystamy z modyfikacji umożliwiającej ustawienie stałej nazwy stacji)
 ## v0.8.8 | Mod 0.0.4 (22.06.2026)
 - Poprawka w bibliotece obsługującej NV3007 (poprawiona wysokość i odstępy podczas obrotu ekranu, ponieważ odstępy między elementami na ekranie były inne po obróceniu ekranu w opcjach)
-- Naprawiono pasek heapbar (pasek bufora) i volbar (pasek głośności) dla NV3007
-- Naprawiono animację ładowania (na ekranie startowym)
+- NV3007: 
+    - Naprawiono pasek heapbar (pasek bufora) i volbar (pasek głośności) dla NV3007
+    - Naprawiono animację ładowania (na ekranie startowym)
 ## v0.8.8 | Mod 0.0.3 (19.06.2026)
 - Poprawka konfiguracji NV3007 (pozycja wskaźnika VU) - Wcześniej trzeba było odwrócić ekran, aby wyświetlić go poprawnie.
 - Poprawiono czyszczenie wyświetlacza po zatrzymaniu odtwarzania. Wcześniej wskaźnik VU był czyszczony na całej szerokości. Zapobiega to teraz nakładaniu się na elementy stopki, takie jak numer kanału i ikona zasięgu wifi (już nie znikają po zatrzymaniu odtwarzania).

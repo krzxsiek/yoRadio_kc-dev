@@ -8,6 +8,7 @@
 
 //#define HIDE_VOLBAR_ONLY_MAIN_SCREEN // Ukrywa pasek glosnosci tylko na glownym ekranie
 #define HIDE_IP_ONLY_MAIN_SCREEN// Ukrywa adres IP tylko na glownym ekranie
+//#define HIDE_VOL_IP // Ukrywa adres IP również na stronie głośności
 #define HIDE_VOL_FOOTER // Ukrywa stopke na ekranie glosnosci
 
 #define bootLogoTop     28

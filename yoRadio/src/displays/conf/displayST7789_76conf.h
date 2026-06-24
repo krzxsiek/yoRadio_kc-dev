@@ -15,11 +15,12 @@
 
 #define BOOMBOX_STYLE
 
-#define HIDE_HEAPBAR
+//#define HIDE_HEAPBAR
 //#define HIDE_VOLBAR
 //#define HIDE_VOL
 #define HIDE_VOLBAR_ONLY_MAIN_SCREEN // Ukrywa pasek glosnosci tylko na glownym ekranie
 //#define HIDE_IP_ONLY_MAIN_SCREEN// Ukrywa adres IP tylko na glownym ekranie
+//#define HIDE_VOL_IP // Ukrywa adres IP również na stronie głośności
 #define HIDE_VOL_FOOTER // Ukrywa stopke na ekranie glosnosci
 
 #define bootLogoTop     14
@@ -41,7 +42,7 @@ const FillConfig   metaBGConfInv  PROGMEM = {{ 0, 19, 0, WA_LEFT }, DSP_WIDTH, 1
 //const FillConfig   volbarConf     PROGMEM = {{ DSP_WIDTH/2, DSP_HEIGHT-0, 0, WA_LEFT }, DSP_WIDTH/2-TFT_FRAMEWDT*2, 3, true };
 const FillConfig   volbarConf     PROGMEM = {{ TFT_FRAMEWDT, DSP_HEIGHT-7, 0, WA_CENTER }, MAX_WIDTH, 5, true };
 const FillConfig  playlBGConf     PROGMEM = {{ 0, 26, 0, WA_LEFT }, DSP_WIDTH, 12, false };
-const FillConfig  heapbarConf     PROGMEM = {{ 0, 63, 0, WA_LEFT }, DSP_WIDTH, 1, false };
+const FillConfig  heapbarConf     PROGMEM = {{ TFT_FRAMEWDT, DSP_HEIGHT-1, 0, WA_LEFT }, DSP_WIDTH, 2, false };
 
 /* WIDGETS  */                           /* { left, top, fontsize, align } */
 const WidgetConfig bootstrConf    PROGMEM = { 0, DSP_HEIGHT-10, 1, WA_CENTER };
@@ -59,16 +60,16 @@ const WidgetConfig apName2Conf    PROGMEM = { 0, 26, 1, WA_CENTER };
 const WidgetConfig apPassConf     PROGMEM = { 0, 37, 1, WA_CENTER };
 const WidgetConfig apPass2Conf    PROGMEM = { 0, 45, 1, WA_CENTER };
 const WidgetConfig clockConf      PROGMEM = { 0, 57, 0, WA_RIGHT };
-const WidgetConfig bootWdtConf    PROGMEM = { 0, 162, 1, WA_CENTER };
-const WidgetConfig vuConf         PROGMEM = { 2, DSP_HEIGHT-12, 1, WA_CENTER };
-const WidgetConfig namedayConf    PROGMEM = { TFT_FRAMEWDT, 175, 2, WA_LEFT }; // Zmieniony nowy wiersz „imieniny”
+const WidgetConfig bootWdtConf    PROGMEM = { 0, DSP_HEIGHT-22, 1, WA_CENTER };
+const WidgetConfig vuConf         PROGMEM = { 2, DSP_HEIGHT-13, 1, WA_CENTER };
+const WidgetConfig namedayConf    PROGMEM = { TFT_FRAMEWDT, 64-11, 1, WA_LEFT }; // Zmieniony nowy wiersz „imieniny”
 const WidgetConfig dateConf       PROGMEM = { TFT_FRAMEWDT *2, 226, 1, WA_LEFT }; // Zmieniony nowy wiersz „data”
 
 const ProgressConfig bootPrgConf  PROGMEM = { 90, 10, 4 };
 const BitrateConfig fullbitrateConf PROGMEM = {{8, 64-10-10, 1, WA_LEFT}, 41 }; // left, top, fontsize, align, border size
 
 /* BANDS  */                             /* { onebandwidth,               onebandheight, bandsHspace, bandsVspace, numofbands, fadespeed } */
-const VUBandsConfig bandsConf     PROGMEM = { DSP_WIDTH/2-TFT_FRAMEWDT*2-2, 7,             TFT_FRAMEWDT*2+4, 1, 17, 2 };
+const VUBandsConfig bandsConf     PROGMEM = { DSP_WIDTH/2-TFT_FRAMEWDT*2-2, 2,             TFT_FRAMEWDT*2+4, 1, 17, 2 };
 
 /* STRINGS  */
 const char         numtxtFmt[]    PROGMEM = "%d";
