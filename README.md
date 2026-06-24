@@ -72,10 +72,7 @@ https://makerworld.com/en/models/2924122-frame-for-lcd-nv3007-2-79-428x142-to-yo
 
 # 🔵 Modified by kc-dev version history
 ## v0.8.8 | Mod 0.0.6 (24.06.2026)
-- ST7789_76:
-    - <a href="images/ST7789_76 v0.8.8 Mod 0.0.6 (24.06.2026).png">
-        <img src="images/ST7789_76 v0.8.8 Mod 0.0.6 (24.06.2026).png" width="300" alt="ST7789 284x76 2.25&quot; ## v0.8.8 | Mod 0.0.6 (24.06.2026)">
-    </a> 
+- ST7789_76:<br/><a href="images/ST7789_76 v0.8.8 Mod 0.0.6 (24.06.2026).png"><img src="images/ST7789_76 v0.8.8 Mod 0.0.6 (24.06.2026).png" width="300" alt="ST7789 284x76 2.25&quot; ## v0.8.8 | Mod 0.0.6 (24.06.2026)"></a>
     - Added a nameday widget to the screen that replaces the IP address (when nameday is enabled in the "TOOLS / Nameday" options, the IP address will be displayed on the volume screen). If nameday is not enabled, the IP address will continue to be displayed in its current location.
     - Added a heapbar under the VU meter that displays the buffer level (enabled via the "SYSTEM / Audio Info" option).
     - Fixed the loading animation (on the home screen).
